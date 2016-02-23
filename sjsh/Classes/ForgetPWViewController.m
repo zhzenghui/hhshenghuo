@@ -31,10 +31,10 @@
 //    self.navigationController.navigationBarHidden = NO;
    
     NSString *title = @"";
-    int startY = 30+97+15;
-    UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-72)/2,30, 72, 97)];
-    inputImageView.image = [UIImage imageNamed:@"toubutu"];
-    [self.view addSubview:inputImageView];
+    int startY = 50;
+//    UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-72)/2,30, 72, 97)];
+//    inputImageView.image = [UIImage imageNamed:@"toubutu"];
+//    [self.view addSubview:inputImageView];
     UIImageView *jinduImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-85)/2,self.view.frame.size.height-top_H-61, 85, 24)];
     [self.view addSubview:jinduImageView];
     switch (_page) {
@@ -51,10 +51,12 @@
             // 按钮
             UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             competeBtn.frame = CGRectMake(35, startY+60*1+20 , 250, 44);
-            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
+//            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
             [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
-            
+            competeBtn.layer.cornerRadius = 5;
+            competeBtn.layer.masksToBounds = YES;
+            competeBtn.backgroundColor = kRedColor;
             [competeBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:competeBtn];
             competeBtn.tag = 2;
@@ -75,10 +77,12 @@
             // 按钮
             UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             competeBtn.frame = CGRectMake(35, startY+60*1+20 , 250, 44);
-            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
+//            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
             [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
-            
+            competeBtn.layer.cornerRadius = 5;
+            competeBtn.layer.masksToBounds = YES;
+            competeBtn.backgroundColor = kRedColor;
             [competeBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:competeBtn];
             competeBtn.tag = 2;
@@ -107,10 +111,12 @@
             // 按钮
             UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             competeBtn.frame = CGRectMake(35, startY+60*2+20 , 250, 44);
-            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
+//            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
             [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
-            
+            competeBtn.layer.cornerRadius = 5;
+            competeBtn.layer.masksToBounds = YES;
+            competeBtn.backgroundColor = kRedColor;
             [competeBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:competeBtn];
             competeBtn.tag = 2;
@@ -141,14 +147,14 @@
 - (void)textFieldShouldBeginEditing:(UITextField *)textField
 {
     if (_page == forgetPage3) {
-        self.view.frame = CGRectMake(0, MRScreenHeight>480? -90:-20, self.view.frame.size.width, self.view.frame.size.height);
+//        self.view.frame = CGRectMake(0, MRScreenHeight>480? -90:-20, self.view.frame.size.width, self.view.frame.size.height);
     }
 }
 
 #pragma mark - 手势
 - (void)handleTap:(UITapGestureRecognizer*)aTapGesture
 {
-    self.view.frame = CGRectMake(0, top_H, self.view.frame.size.width, self.view.frame.size.height);
+//    self.view.frame = CGRectMake(0, top_H, self.view.frame.size.width, self.view.frame.size.height);
     [self.TextField1 resignFirstResponder];
     [self.TextField2 resignFirstResponder];
     

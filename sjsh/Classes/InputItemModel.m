@@ -26,7 +26,7 @@
         
         UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(44, 0, 211, 44)];
         textField.font = [UIFont systemFontOfSize:14];
-        textField.textColor = [UIColor orangeColor];
+        textField.textColor = [UIColor colorWithRed:51/255. green:204/255. blue:204/255. alpha:1];
         textField.delegate = self;
         textField.placeholder = placeholder;
         textField.text = text;
@@ -53,7 +53,7 @@
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    self.image = [UIImage imageNamed:@"input_bg_text"];
+//    self.image = [UIImage imageNamed:@"input_bg_text"];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
