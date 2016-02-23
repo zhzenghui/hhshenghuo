@@ -1,0 +1,97 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "ASINetworkQueue.h"
+#endif
+#define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
+
+#ifdef DEBUG
+# define NSLog(...) NSLog(__VA_ARGS__);
+#else
+# define NSLog(...);
+#endif
+
+#define kWXAPP_ID  @"wx216cfcef6efa096e" //@"wx0907b1111a8e4f35"
+//#define kWXAPP_ID  @"wx94407b3571151d14"
+
+#define kWXAPP_SECRET @"10b6fedb56b45d733546825712990aaf"//@"ce823d68409bcf53ef4dabc6ae6959dd"
+#define ORDER_PAY_NOTIFICATION  @"wx_pay_notification"
+#define WXPartnerId @"1221839801"
+#define WXPartnerKey @"79afd72ef6fb2f4db95aa5b498b94896"
+#define WXAPPKey  @"VSefn0PP8oN5YRsAouB4L2AiCoVraeF4hUQ4hQ9qccCfCsbz5OPGF5trLA2sFkFNYJZTRihITtkFrvMqu0Kt8IHj2SMcm7DjoYce2UXSiq7szApqiYhFnfIkaEA2Ant8"
+
+
+#define IosAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+#define INTERFACE_IS_PAD     ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+#define INTERFACE_IS_PHONE   ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+
+#define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#pragma mark -  判断设备型号
+#define IPHONE5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#pragma mark - 判断系统版本号
+#define IOSVERSION [[UIDevice currentDevice].systemVersion doubleValue]
+
+#define MRScreenWidth      CGRectGetWidth([UIScreen mainScreen].applicationFrame)
+#define MRScreenHeight     CGRectGetHeight([UIScreen mainScreen].applicationFrame)
+
+#define top_H 64
+
+#define BACK_X 0
+#define BACK_Y 5
+#define BACK_WEITH 30
+#define BACK_HIGHT 30
+
+#define OTHERBTN_X 0
+#define OTHERBTN_Y 5
+#define OTHERBTN_WEITH 30
+#define OTHERBTN_HIGHT 30
+
+
+#define LOGIN_BG [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bg" ofType:@"png"]]
+
+#define LOGIN_BG_568h [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bg_568h" ofType:@"png"]]
+
+#define INPUT_BG [UIImage imageNamed:@"input_bg"]//[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"input_bg" ofType:@"png"]]
+
+#define INPUT_BG_Text [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"input_bg_text" ofType:@"png"]]
+
+#define ACCOUNT_BG [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"account" ofType:@"png"]]
+#define PASSWORD_BG [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"password" ofType:@"png"]]
+#define LOGIN_BTN_BG [UIImage imageNamed:@"login_btn_bg"]//[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"login_btn_bg" ofType:@"png"]]
+
+#define WINXIN_LOGIN_BG [UIImage imageNamed:@"weixin"]// [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"weixin" ofType:@"png"]]
+#define QQ_LOGIN_BG [UIImage imageNamed:@"QQ"]//[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"QQ" ofType:@"png"]]
+
+#define BACK_IMAGE [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"leftReturn" ofType:@"png"]]
+#define CANCLE_IMAGE [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"close" ofType:@"png"]]
+
+
+#define kCellHeightForRow @"kCellHeightForRow"
+#define kCellIdentifier @"kCellIdentifier"
+#define kCellTitle @"kCellTitle" // cell的题目
+#define kCellContent @"kCellContent" // cell的内容
+#define kCellAccessoryType @"kCellAccessoryType"
+#define kCellPlaceholder @"kCellPlaceholder"
+
+
+//cell accessoryType
+#define CellAccessoryNone @"UITableViewCellAccessoryNone"                   // don't show any accessory view
+#define CellAccessoryDisclosureIndicator @"UITableViewCellAccessoryDisclosureIndicator"    // regular chevron. doesn't track
+#define CellAccessoryDetailDisclosureButton @"UITableViewCellAccessoryDetailDisclosureButton" // blue button w/ chevron. tracks
+#define CellAccessoryCheckmark @"UITableViewCellAccessoryCheckmark"
+
+#define kCellSegue @"kCellSegue" //cell要跳转的
+

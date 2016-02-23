@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- <script src="js/jquery-1.11.1.min.js"></script> -->
+<script src="images/jquery-2.1.1.min.js"></script>
+<style type="text/css">
+	.img.block{
+		display: block !important;
+	}
+	.img{
+		display: none;
+	}
+	#body ul{
+		margin: 0;
+		padding: 20% 34% 3%;
+		width: 34%;
+	}
+	.img img{
+		width: 100%;
+	}
+	ul li {
+		width: 100%;
+	}
+	.tip{
+		color: #cccccc;
+		text-align: center;
+	}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	var clock = setInterval(aa,300);
+	function aa(){
+	var li = $("#body li");
+		for (var i = li.length; i >= 0; i--) {
+			if ($(li[i]).hasClass('block')) {
+				$(li[i]).removeClass('block');
+				i = i == li.length-1 ? -1 : i;
+				$(li[i + 1]).addClass('block');
+			}
+				// return;
+		}
+	}
+});
+</script>
+</head>
+<body>
+<div id="body">
+	<ul>
+		<li class="img block"><img src="images/refresh-one.png"/></li>
+		<li class="img"><img src="images/refresh-two.png"/></li>
+		<li class="img"><img src="images/refresh-three.png"/></li>
+		<li class="img"><img src="images/refresh-four.png"/></li>
+	</ul>
+	<div class="tip">下拉屏幕 重新加载</div>
+</div>
+</body>
+</html>

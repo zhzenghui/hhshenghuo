@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C6C9E37D-338B-4D8B-A098-04758C0BEDB6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>sjsh</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E91939358000547461A80E3507AC61FC79D9B9F1</key>
+		<string>https://git.oschina.net/xiaoyangsavvy/CenturyLife.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>sjsh.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E91939358000547461A80E3507AC61FC79D9B9F1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.oschina.net/xiaoyangsavvy/CenturyLife.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E91939358000547461A80E3507AC61FC79D9B9F1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E91939358000547461A80E3507AC61FC79D9B9F1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CenturyLife</string>
+		</dict>
+	</array>
+</dict>
+</plist>
