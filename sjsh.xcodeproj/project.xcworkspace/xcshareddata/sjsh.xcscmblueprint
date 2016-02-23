@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E05C75F047F071FD8BEB4B64D7139FF1EED77BEB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E05C75F047F071FD8BEB4B64D7139FF1EED77BEB" : 0,
+    "E91939358000547461A80E3507AC61FC79D9B9F1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C6C9E37D-338B-4D8B-A098-04758C0BEDB6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E05C75F047F071FD8BEB4B64D7139FF1EED77BEB" : "hhshenghuo\/",
+    "E91939358000547461A80E3507AC61FC79D9B9F1" : "CenturyLife"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "sjsh",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "sjsh.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/xiaoyangsavy\/hhshenghuo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E05C75F047F071FD8BEB4B64D7139FF1EED77BEB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/xiaoyangsavvy\/CenturyLife.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E91939358000547461A80E3507AC61FC79D9B9F1"
+    }
+  ]
+}

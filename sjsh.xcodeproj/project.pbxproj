@@ -298,7 +298,6 @@
 		4DEEE7E51BF1CB660099A197 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEE7E41BF1CB660099A197 /* OrderCell.m */; };
 		4DEEF7F01C7BFF650099F0EC /* HHOrderCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEF7EF1C7BFF650099F0EC /* HHOrderCommodityCell.m */; };
 		4DEEF7F31C7C2FAB0099F0EC /* HHAddressEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEF7F21C7C2FAB0099F0EC /* HHAddressEditController.m */; };
-		4DEEF7F61C7C5C400099F0EC /* HHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEF7F51C7C5C400099F0EC /* HHLoginViewController.m */; };
 		4DF091D61BD4EDAC00EA7508 /* CustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF091D51BD4EDAC00EA7508 /* CustomPageControl.m */; };
 		4DF091D91BD4F6BF00EA7508 /* HomeCommodityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF091D81BD4F6BF00EA7508 /* HomeCommodityCell.m */; };
 		4DF97BD31BD8BC5300C7B07A /* AddOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF97BD21BD8BC5300C7B07A /* AddOrderViewController.m */; };
@@ -1046,8 +1045,6 @@
 		4DEEF7EF1C7BFF650099F0EC /* HHOrderCommodityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHOrderCommodityCell.m; sourceTree = "<group>"; };
 		4DEEF7F11C7C2FAB0099F0EC /* HHAddressEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAddressEditController.h; sourceTree = "<group>"; };
 		4DEEF7F21C7C2FAB0099F0EC /* HHAddressEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHAddressEditController.m; sourceTree = "<group>"; };
-		4DEEF7F41C7C5C400099F0EC /* HHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHLoginViewController.h; sourceTree = "<group>"; };
-		4DEEF7F51C7C5C400099F0EC /* HHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHLoginViewController.m; sourceTree = "<group>"; };
 		4DF091D41BD4EDAC00EA7508 /* CustomPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPageControl.h; sourceTree = "<group>"; };
 		4DF091D51BD4EDAC00EA7508 /* CustomPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPageControl.m; sourceTree = "<group>"; };
 		4DF091D71BD4F6BF00EA7508 /* HomeCommodityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCommodityCell.h; sourceTree = "<group>"; };
@@ -1847,8 +1844,6 @@
 				4D1820101C7B456600B325CC /* HHAdressViewController.m */,
 				4DEEF7F11C7C2FAB0099F0EC /* HHAddressEditController.h */,
 				4DEEF7F21C7C2FAB0099F0EC /* HHAddressEditController.m */,
-				4DEEF7F41C7C5C400099F0EC /* HHLoginViewController.h */,
-				4DEEF7F51C7C5C400099F0EC /* HHLoginViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -3568,7 +3563,6 @@
 				D7F6C1E6197CF32000A05DC2 /* AreaPickerView.m in Sources */,
 				D7F6C19C197CF12E00A05DC2 /* ASIDataDecompressor.m in Sources */,
 				D7F3D86A1981EC5C00CE3FCD /* MyOrderListViewController.m in Sources */,
-				4DEEF7F61C7C5C400099F0EC /* HHLoginViewController.m in Sources */,
 				D7F6C15D197CF11F00A05DC2 /* NSString+SBJSON.m in Sources */,
 				D7F6C1A9197CF12E00A05DC2 /* ASICloudFilesRequest.m in Sources */,
 				4DE1A1B91C0596FF006FFAF7 /* MemberAccountViewController.m in Sources */,
