@@ -74,6 +74,13 @@
     if (IOS7_OR_LATER) { // 判断是否是IOS7
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     }
+    
+    
+    self.loadIndicator =  [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.loadIndicator.center = CGPointMake(ScreenWidth*0.5, ScreenHeight*0.5-30);//只能设置中心，不能设置大小
+//    [self.loadIndicator setFrame = CGRectMack(100, 100, 100, 100)];//不建议这样设置，因为UIActivityIndicatorView是不能改变大小只能改变位置，这样设置得到的结果是控件的中心在（100，100）上，而不是和其他控件的frame一样左上角在（100， 100）长为100，宽为100.
+    [self.view addSubview:self.loadIndicator];
+    self.loadIndicator.color = kRedColor; // 改变圈圈的颜色为红色； iOS5引入
 }
 
 -(void)initNavBar:(NSString *)title{
@@ -368,49 +375,14 @@
 
 -(void)showGif{
 
-//    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"1.gif" ofType:nil];
-//    NSData* imageData = [NSData dataWithContentsOfFile:filePath];
-//    
-//    _gifImageView = [[SCGIFImageView alloc] initWithFrame:CGRectMake((320-64)/2, 200, 64, 64)];
-//    [_gifImageView setData:imageData];
-//    
-//    [self.view addSubview:_gifImageView];
-//    [_gifImageView release];
-    NSMutableArray *imglist = [NSMutableArray array];
-    for (int i = 1; i<53; i++) {
-        NSString *name = @"preloader_";
-        if (i<10) {
-            name = [name stringByAppendingFormat:@"0%d",i];
-        }
-        else {
-            name = [name stringByAppendingFormat:@"%d",i];
-        }
-        [imglist addObject:[UIImage imageNamed:name]];
-    }
-//    if (loadingImageView) {
-//        [loadingImageView release];
-//        loadingImageView = nil;
-//    }
-    if (loadingImageView == nil) {
-        loadingImageView = [[UIImageView alloc] initWithFrame:CGRectMake((320-64)/2, 200, 64, 64)];
-        loadingImageView.animationImages = imglist;
-        loadingImageView.animationDuration = 2;
-        loadingImageView.animationRepeatCount = 0;
-    }
-    [self.view addSubview:loadingImageView];
-//    [loadingImageView release];
-    [loadingImageView startAnimating];
-    
+[self.loadIndicator startAnimating]; // 开始旋转
+//    self.view.userInteractionEnabled = NO;
 }
 
 -(void)hideGif{
-    if (loadingImageView) {
-        if ([loadingImageView isAnimating]) {
-            [loadingImageView stopAnimating];
-        }
-        [loadingImageView removeFromSuperview];
-    }
-    
+    [self.loadIndicator stopAnimating]; // 结束旋转
+    [self.loadIndicator setHidesWhenStopped:YES]; //当旋转结束时隐藏
+//    self.view.userInteractionEnabled = YES;
 }
 
 //动画判断暂时作废，改为统一动画

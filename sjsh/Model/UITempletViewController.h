@@ -29,6 +29,8 @@
 @property (nonatomic,retain) UIButton *rightButton;
 @property (nonatomic,retain) CommonModel *commonModel;
 @property (nonatomic,retain) UIImageView *loadingImageView;
+
+@property (nonatomic,retain) UIActivityIndicatorView *loadIndicator;
 -(void)initNavBar:(NSString *)title;
 
 //NavBar设置
