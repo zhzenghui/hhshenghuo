@@ -105,22 +105,24 @@
     
     if (self.type == getVerificationCode) {
         jinduImageView.image = [UIImage imageNamed:@"jindu2-1"];
-        UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-90)/2,30, 90, 77)];
-        inputImageView.image = [UIImage imageNamed:@"dingbutu"];
-        [self.view addSubview:inputImageView];
+//        UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-90)/2,30, 90, 77)];
+//        inputImageView.image = [UIImage imageNamed:@"dingbutu"];
+//        [self.view addSubview:inputImageView];
 
-        InputItemModel *input = [[InputItemModel alloc] initWithFrame:CGRectMake(33,107, 254, 45) iconImage:@"shouji" text:@"" placeHolderText:@"输入手机号"];
+        InputItemModel *input = [[InputItemModel alloc] initWithFrame:CGRectMake(33,50, 254, 45) iconImage:@"shouji" text:@"" placeHolderText:@"输入手机号"];
         //  输入框
         [self.view addSubview:input];
         self.inputTextField = input.textField;
 
         // 按钮
         UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        competeBtn.frame = CGRectMake(35, 182 , 250, 44);
-        [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
+        competeBtn.frame = CGRectMake(35, 130 , 250, 44);
+//        [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
         [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
-        
+        competeBtn.layer.cornerRadius = 5;
+        competeBtn.layer.masksToBounds = YES;
+        competeBtn.backgroundColor = kRedColor;
         [competeBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:competeBtn];
         competeBtn.tag = 1;
@@ -131,14 +133,14 @@
     {
         jinduImageView.image = [UIImage imageNamed:@"jindu2-2"];
         
-        int startY = 17;
-        if (MRScreenHeight>480) {
-            UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-90)/2,30, 90, 77)];
-            inputImageView.image = [UIImage imageNamed:@"dingbutu"];
-            [self.view addSubview:inputImageView];
-            startY = 108;
-        }
-        for (int i = 0; i<5; i++) {
+        int startY = 50;
+//        if (MRScreenHeight>480) {
+//            UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-90)/2,30, 90, 77)];
+//            inputImageView.image = [UIImage imageNamed:@"dingbutu"];
+//            [self.view addSubview:inputImageView];
+//            startY = 108;
+//        }
+        for (int i = 0; i<4; i++) {
             //  输入框
             CGRect rect = CGRectMake(35,startY+60*i, 250, 44);
 //            UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake(35,top_H + 90 - 44+60*i, 250, 44)];
@@ -193,17 +195,17 @@
                     self.repeatPassTextField.keyboardType = UIKeyboardTypeEmailAddress;
                 }
                     break;
-                case 4:
-                {
-                    InputItemModel *input = [[InputItemModel alloc] initWithFrame:rect iconImage:@"shouji" text:@"" placeHolderText: @"请输入推荐人手机号"];
-                    //  输入框
-                    input.delegate = self;
-                    [self.view addSubview:input];
-                    self.recommendedTextField = input.textField;
-                    self.recommendedTextField.secureTextEntry = YES;
-                    self.recommendedTextField.keyboardType = UIKeyboardTypeEmailAddress;
-                }
-                    break;
+//                case 4:
+//                {
+//                    InputItemModel *input = [[InputItemModel alloc] initWithFrame:rect iconImage:@"shouji" text:@"" placeHolderText: @"请输入推荐人手机号"];
+//                    //  输入框
+//                    input.delegate = self;
+//                    [self.view addSubview:input];
+//                    self.recommendedTextField = input.textField;
+//                    self.recommendedTextField.secureTextEntry = YES;
+//                    self.recommendedTextField.keyboardType = UIKeyboardTypeEmailAddress;
+//                }
+//                    break;
                 default:
                     break;
             }
@@ -214,14 +216,16 @@
         // 按钮
         UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         competeBtn.frame = CGRectMake(35, startY+60*5+20 , 250, 44);
-        [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
+//        [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
         [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
-        
+        competeBtn.backgroundColor = kRedColor;
         [competeBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        competeBtn.layer.cornerRadius = 5;
+        competeBtn.layer.masksToBounds = YES;
         [self.view addSubview:competeBtn];
         competeBtn.tag = 2;
-        [competeBtn setTitle:@"开始体验吧" forState:UIControlStateNormal];
+        [competeBtn setTitle:@"开始体验" forState:UIControlStateNormal];
 //        self.navigationItem.leftBarButtonItem = [PublicClassMethod imageButtonSetImageAndTarget:self andSel:@selector(back) andImage:BACK_IMAGE];
     }
     

@@ -201,7 +201,7 @@
     NSInteger forget_B = MRScreenHeight>480?188+top_H:128+top_H; // 按钮中心距离底部的距离
     //    忘记密码
     UIButton *forgetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    forgetBtn.frame = CGRectMake(75, self.view.frame.size.height - forget_B - 20 , 60, 20);
+    forgetBtn.frame = CGRectMake(35, self.view.frame.size.height - forget_B - 20 , 60, 20);
     [forgetBtn setTitleColor:COLOR(0x6d, 0x6d, 0x6d) forState:UIControlStateNormal];
     [forgetBtn setTitleColor:COLOR(0x6d, 0x6d, 0x6d) forState:UIControlStateHighlighted];
     [forgetBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
@@ -212,7 +212,7 @@
     
     //注册账号
     UIButton *registBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    registBtn.frame = CGRectMake(MRScreenWidth - 60 - 75, self.view.bounds.size.height - forget_B - 20 , 60, 20);
+    registBtn.frame = CGRectMake(MRScreenWidth - 60 - 35, self.view.bounds.size.height - forget_B - 20 , 60, 20);
     [registBtn setTitleColor:COLOR(0x6d, 0x6d, 0x6d) forState:UIControlStateNormal];
     [registBtn setTitleColor:COLOR(0x6d, 0x6d, 0x6d) forState:UIControlStateHighlighted];
     [registBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
