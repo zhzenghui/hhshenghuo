@@ -19,6 +19,7 @@
         self.textField.font = [UIFont systemFontOfSize:14];
         self.textField.textColor = [UIColor colorWithRed:100 / 255.0 green:100 / 255.0 blue:100 / 255.0 alpha:1];
         self.textField.text = @"";
+        self.textField.placeholder = @"请输入";
         self.textField.backgroundColor = [UIColor clearColor];
         self.textField.clearButtonMode = UITextFieldViewModeNever;
         [self.contentView addSubview:self.textField];
