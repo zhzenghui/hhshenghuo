@@ -68,52 +68,52 @@
     //    [self.window makeKeyAndVisible];
     
     self.window.rootViewController = tabBarController;
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:[@"showGuidence" stringByAppendingString:IosAppVersion]] == nil) {
-        CGFloat width = self.window.frame.size.width;
-        CGFloat height = self.window.frame.size.height;
-        
-        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.window.bounds];
-        scrollView.contentSize = CGSizeMake(scrollView.frame.size.width*3, scrollView.frame.size.height);
-        scrollView.bounces = NO;
-        scrollView.showsHorizontalScrollIndicator = NO;
-        scrollView.showsVerticalScrollIndicator = NO;
-        scrollView.pagingEnabled = YES;
-        
-        NSString *title = @"";
-        if (height == 480) {
-            title = @"640×960";
-        }
-        else if (height == 568) {
-            title = @"640×1136";
-        }
-        else if (height == 1334/2) {
-            title = @"750×1334";
-        }
-        else if (height == 1920/2) {
-            title = @"1080×1920";
-        }
-        
-        
-        for (int i =0; i<3; i++) {
-            
-            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(i*width, 0, width, height)];
-            NSString *name = [NSString stringWithFormat:@"%@-%d",title,i+1];
-            imgView.image = [UIImage imageNamed:name];
-            imgView.userInteractionEnabled = YES;
-            [scrollView addSubview:imgView];
-            if (i==2) {
-                UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-                button.frame = CGRectMake((width-120)/2, height-90, 120, 60);
-                [button addTarget:self action:@selector(removeHelpPage:) forControlEvents:UIControlEventTouchUpInside];
-                button.backgroundColor = [UIColor clearColor];
-                [imgView addSubview:button];
-            }
-        }
-        [self.window.rootViewController.view addSubview:scrollView];
-        
-        [[NSUserDefaults standardUserDefaults] setObject:@"show" forKey:[@"showGuidence" stringByAppendingString:IosAppVersion]];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
+//    if ([[NSUserDefaults standardUserDefaults] objectForKey:[@"showGuidence" stringByAppendingString:IosAppVersion]] == nil) {
+//        CGFloat width = self.window.frame.size.width;
+//        CGFloat height = self.window.frame.size.height;
+//        
+//        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.window.bounds];
+//        scrollView.contentSize = CGSizeMake(scrollView.frame.size.width*3, scrollView.frame.size.height);
+//        scrollView.bounces = NO;
+//        scrollView.showsHorizontalScrollIndicator = NO;
+//        scrollView.showsVerticalScrollIndicator = NO;
+//        scrollView.pagingEnabled = YES;
+//        
+//        NSString *title = @"";
+//        if (height == 480) {
+//            title = @"640×960";
+//        }
+//        else if (height == 568) {
+//            title = @"640×1136";
+//        }
+//        else if (height == 1334/2) {
+//            title = @"750×1334";
+//        }
+//        else if (height == 1920/2) {
+//            title = @"1080×1920";
+//        }
+//        
+//        
+//        for (int i =0; i<3; i++) {
+//            
+//            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(i*width, 0, width, height)];
+//            NSString *name = [NSString stringWithFormat:@"%@-%d",title,i+1];
+//            imgView.image = [UIImage imageNamed:name];
+//            imgView.userInteractionEnabled = YES;
+//            [scrollView addSubview:imgView];
+//            if (i==2) {
+//                UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//                button.frame = CGRectMake((width-120)/2, height-90, 120, 60);
+//                [button addTarget:self action:@selector(removeHelpPage:) forControlEvents:UIControlEventTouchUpInside];
+//                button.backgroundColor = [UIColor clearColor];
+//                [imgView addSubview:button];
+//            }
+//        }
+//        [self.window.rootViewController.view addSubview:scrollView];
+//        
+//        [[NSUserDefaults standardUserDefaults] setObject:@"show" forKey:[@"showGuidence" stringByAppendingString:IosAppVersion]];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
     
     
     //    tabBarController.selectedIndex = 1;

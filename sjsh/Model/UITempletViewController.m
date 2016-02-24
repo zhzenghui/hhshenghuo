@@ -81,6 +81,20 @@
 //    [self.loadIndicator setFrame = CGRectMack(100, 100, 100, 100)];//不建议这样设置，因为UIActivityIndicatorView是不能改变大小只能改变位置，这样设置得到的结果是控件的中心在（100，100）上，而不是和其他控件的frame一样左上角在（100， 100）长为100，宽为100.
     [self.view addSubview:self.loadIndicator];
     self.loadIndicator.color = kRedColor; // 改变圈圈的颜色为红色； iOS5引入
+    
+    //提交弹出层
+    self.backageTopView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth,64)];
+    self.backageTopView.backgroundColor = [UIColor blackColor];
+    self.backageTopView.alpha = 0.4;
+    self.backageTopView.hidden = YES;
+    UIWindow *myWindow  = [[UIApplication sharedApplication].delegate window];
+    [myWindow addSubview:self.backageTopView];
+    
+    self.backageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64)];
+    self.backageView.backgroundColor = [UIColor blackColor];
+    self.backageView.alpha = 0.4;
+    self.backageView.hidden = YES;
+    [self.view addSubview:self.backageView];
 }
 
 -(void)initNavBar:(NSString *)title{
@@ -375,6 +389,10 @@
 
 -(void)showGif{
 
+    self.backageTopView.hidden = NO;
+    self.backageView.hidden = NO;
+    [self.view bringSubviewToFront:self.backageView];
+    
 [self.loadIndicator startAnimating]; // 开始旋转
 //    self.view.userInteractionEnabled = NO;
 }
@@ -382,6 +400,10 @@
 -(void)hideGif{
     [self.loadIndicator stopAnimating]; // 结束旋转
     [self.loadIndicator setHidesWhenStopped:YES]; //当旋转结束时隐藏
+    self.backageTopView.hidden = YES;
+    self.backageView.hidden = YES;
+    [self.view sendSubviewToBack:self.backageView];
+    
 //    self.view.userInteractionEnabled = YES;
 }
 

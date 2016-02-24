@@ -31,6 +31,10 @@
 @property (nonatomic,retain) UIImageView *loadingImageView;
 
 @property (nonatomic,retain) UIActivityIndicatorView *loadIndicator;
+@property (nonatomic,retain) UIView *backageView;
+@property (nonatomic,retain) UIView *backageTopView;
+
+
 -(void)initNavBar:(NSString *)title;
 
 //NavBar设置

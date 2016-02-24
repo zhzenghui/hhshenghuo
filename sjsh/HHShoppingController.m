@@ -164,7 +164,7 @@
     
     //页面布局*******************************
     self.homeScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-    self.homeScroll.contentSize=CGSizeMake(self.bannerScroll.bounds.size.width, 1200);
+    self.homeScroll.contentSize=CGSizeMake(self.bannerScroll.bounds.size.width, 1300);
     self.homeScroll.showsHorizontalScrollIndicator=NO;
     self.homeScroll.showsVerticalScrollIndicator=NO;
     self.homeScroll.backgroundColor = [UIColor clearColor];
@@ -452,11 +452,11 @@
     self.commodityCollectionArray = [myResultArray mutableCopy];
     
     
-    float commodityCollectionHeight = (ScreenWidth)*0.5*1.537*(self.commodityCollectionArray.count/2)+30;
+    float commodityCollectionHeight = (ScreenWidth)*0.5*1.537*(self.commodityCollectionArray.count/2)+2;
     CGRect commodityCollectionCGRect = self.commodityCollection.frame;
     commodityCollectionCGRect.size.height = commodityCollectionHeight;
     NSLog(@"高度为：%lu！！！！",((self.commodityCollectionArray.count-1)/2)+1);//count从1开始
-    self.homeScroll.contentSize=CGSizeMake(self.bannerScroll.bounds.size.width, 650+commodityCollectionHeight);
+    self.homeScroll.contentSize=CGSizeMake(self.bannerScroll.bounds.size.width, 710+commodityCollectionHeight);
     self.commodityCollection.frame = commodityCollectionCGRect;
     [self.commodityCollection reloadData];
     
