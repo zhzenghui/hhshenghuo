@@ -132,7 +132,7 @@
     
     
     
-    profileTableView = [[UITableView alloc] initWithFrame:CGRectMake(kScreenBounds.origin.x, 0, kScreenBounds.size.width, kScreenBounds.size.height - 44.0f) style:UITableViewStylePlain];
+    profileTableView = [[UITableView alloc] initWithFrame:CGRectMake(kScreenBounds.origin.x, 0, kScreenBounds.size.width, kScreenBounds.size.height - 64.0f-30) style:UITableViewStylePlain];
     profileTableView.delegate = self;
     profileTableView.dataSource = self;
     profileTableView.backgroundColor = [UIColor clearColor];

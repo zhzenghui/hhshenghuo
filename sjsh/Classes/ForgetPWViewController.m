@@ -12,6 +12,8 @@
 
 @interface ForgetPWViewController ()<inputModelDelegate,UIGestureRecognizerDelegate>
 
+@property(nonatomic,strong)UIPageControl *preferentialPageControl;    //指示器
+
 @end
 
 @implementation ForgetPWViewController
@@ -30,18 +32,31 @@
     [super viewDidLoad];
 //    self.navigationController.navigationBarHidden = NO;
    
+    self.preferentialPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0,self.view.frame.size.height-top_H-61, ScreenWidth, 20)];
+    self.preferentialPageControl.tag=198814;
+    //    [self.preferentialPageControl setPageIndicatorTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"hh_dot_white_ico.jpg"]]];
+    [self.preferentialPageControl setValue:[UIImage imageNamed:@"hh_dot_biue_ico"] forKey:@"_currentPageImage"];
+    [self.preferentialPageControl setValue:[UIImage imageNamed:@"hh_dot_white_ico"]  forKey:@"_pageImage"];
+    self.preferentialPageControl.userInteractionEnabled = NO;
+    [self.preferentialPageControl setNumberOfPages:3];
+    [self.preferentialPageControl setCurrentPage:0];
+    [self.view addSubview:self.preferentialPageControl];
+
+    
     NSString *title = @"";
     int startY = 50;
 //    UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-72)/2,30, 72, 97)];
 //    inputImageView.image = [UIImage imageNamed:@"toubutu"];
 //    [self.view addSubview:inputImageView];
-    UIImageView *jinduImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-85)/2,self.view.frame.size.height-top_H-61, 85, 24)];
-    [self.view addSubview:jinduImageView];
+//    UIImageView *jinduImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-85)/2,self.view.frame.size.height-top_H-61, 85, 24)];
+//    [self.view addSubview:jinduImageView];
     switch (_page) {
         case forgetPage1:
         {
             title = @"找回密码";
-            jinduImageView.image = [UIImage imageNamed:@"jindu3-1"];
+//            jinduImageView.image = [UIImage imageNamed:@"jindu3-1"];
+             [self.preferentialPageControl setCurrentPage:0];
+            
             CGRect rect = CGRectMake(35,startY+60*0, 250, 44);
             InputItemModel *input = [[InputItemModel alloc] initWithFrame:rect iconImage:@"shouji" text:@"" placeHolderText: @"输入手机号"];
             //  输入框
@@ -66,7 +81,9 @@
         case forgetPage2:
         {
             title = @"找回密码";
-            jinduImageView.image = [UIImage imageNamed:@"jindu3-2"];
+//            jinduImageView.image = [UIImage imageNamed:@"jindu3-2"];
+             [self.preferentialPageControl setCurrentPage:1];
+            
             CGRect rect = CGRectMake(35,startY+60*0, 250, 44);
             InputItemModel *input = [[InputItemModel alloc] initWithFrame:rect iconImage:@"yanzhengma" text:@"" placeHolderText: @"输入验证码"];
             //  输入框
@@ -92,7 +109,9 @@
         case forgetPage3:
         {
             title = @"设置新密码";
-            jinduImageView.image = [UIImage imageNamed:@"jindu3-3"];
+//            jinduImageView.image = [UIImage imageNamed:@"jindu3-3"];
+             [self.preferentialPageControl setCurrentPage:2];
+            
             CGRect rect = CGRectMake(35,startY+60*0, 250, 44);
             InputItemModel *input = [[InputItemModel alloc] initWithFrame:rect iconImage:@"password" text:@"" placeHolderText: @"输入新密码"];
             //  输入框

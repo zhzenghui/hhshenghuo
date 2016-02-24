@@ -23,7 +23,7 @@
         
         self.checkBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         self.checkBtn.frame = CGRectMake(MRScreenWidth - 46, 2, 46, 46);
-        [self.checkBtn setImage:[UIImage imageNamed:@"check"] forState:UIControlStateSelected];
+        [self.checkBtn setImage:[UIImage imageNamed:@"hh_user_address_select"] forState:UIControlStateSelected];
 
         [self.contentView addSubview:self.checkBtn];
         

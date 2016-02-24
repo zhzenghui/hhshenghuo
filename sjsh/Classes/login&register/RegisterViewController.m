@@ -13,6 +13,9 @@
 
 @interface RegisterViewController ()<inputModelDelegate>
 
+@property(nonatomic,strong)UIPageControl *preferentialPageControl;    //指示器
+
+
 @end
 
 @implementation RegisterViewController
@@ -100,11 +103,25 @@
 //    [closeButton release];
     /******************/
     
-    UIImageView *jinduImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-60)/2,self.view.frame.size.height-top_H-61, 60, 24)];
-        [self.view addSubview:jinduImageView];
+    
+    self.preferentialPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0,self.view.frame.size.height-top_H-61, ScreenWidth, 20)];
+    self.preferentialPageControl.tag=198814;
+    //    [self.preferentialPageControl setPageIndicatorTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"hh_dot_white_ico.jpg"]]];
+    [self.preferentialPageControl setValue:[UIImage imageNamed:@"hh_dot_biue_ico"] forKey:@"_currentPageImage"];
+    [self.preferentialPageControl setValue:[UIImage imageNamed:@"hh_dot_white_ico"]  forKey:@"_pageImage"];
+    self.preferentialPageControl.userInteractionEnabled = NO;
+    [self.preferentialPageControl setNumberOfPages:2];
+    [self.preferentialPageControl setCurrentPage:0];
+    [self.view addSubview:self.preferentialPageControl];
+
+    
+    
+    
+//    UIImageView *jinduImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-60)/2,self.view.frame.size.height-top_H-61, 60, 24)];
+//        [self.view addSubview:jinduImageView];
     
     if (self.type == getVerificationCode) {
-        jinduImageView.image = [UIImage imageNamed:@"jindu2-1"];
+//        jinduImageView.image = [UIImage imageNamed:@"jindu2-1"];
 //        UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-90)/2,30, 90, 77)];
 //        inputImageView.image = [UIImage imageNamed:@"dingbutu"];
 //        [self.view addSubview:inputImageView];
@@ -131,8 +148,8 @@
     }
     else if(self.type == regist)
     {
-        jinduImageView.image = [UIImage imageNamed:@"jindu2-2"];
-        
+//        jinduImageView.image = [UIImage imageNamed:@"jindu2-2"];
+         [self.preferentialPageControl setCurrentPage:1];
         int startY = 50;
 //        if (MRScreenHeight>480) {
 //            UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MRScreenWidth-90)/2,30, 90, 77)];

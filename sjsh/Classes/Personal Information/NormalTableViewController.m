@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.dataArray = [[NSMutableArray alloc] init];
 //    self.navigationController.navigationBarHidden = NO;
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(kScreenBounds.origin.x, 0, kScreenBounds.size.width, kScreenBounds.size.height - 44.0f) style:UITableViewStyleGrouped];;
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(kScreenBounds.origin.x, 0, kScreenBounds.size.width, kScreenBounds.size.height - 44.0f-50) style:UITableViewStyleGrouped];;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
@@ -46,7 +46,16 @@
     [super addButtonReturn:@"leftReturn" lightedImage:@"leftReturn" selector:@selector(toReturn)];
     if (self.type != Type_Address)
     {
-        [super addRightButton:@"save" lightedImage:@"save" selector:@selector(save)];
+ 
+        self.submitButton = [[UIButton alloc] initWithFrame:CGRectMake(0, ScreenHeight-50-64, ScreenWidth, 50)];
+        [self.submitButton setTitle:@"保存" forState:UIControlStateNormal];
+        self.submitButton.titleLabel.font = [UIFont systemFontOfSize:18];
+        self.submitButton.backgroundColor = kRedColor;
+        [self.submitButton addTarget:self action:@selector(save) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.submitButton];
+
+        
+        
     }
     
     [self createTableView];

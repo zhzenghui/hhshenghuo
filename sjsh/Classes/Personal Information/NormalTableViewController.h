@@ -21,6 +21,8 @@ enum TableViewType {
 
 @property (nonatomic, assign) enum TableViewType type;
 
+@property (nonatomic, assign) UIButton *submitButton;
+
 @property (retain, nonatomic) NSMutableArray *dataArray;
 @property (retain, nonatomic) UITableView *tableView;
 @property (retain, nonatomic) NSString *nickNameStr;//昵称
