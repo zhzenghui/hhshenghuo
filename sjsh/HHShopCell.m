@@ -65,7 +65,7 @@
 //        self.sellLabel.textColor = lineGrayColor;
 //        [self addSubview:self.sellLabel];
         
-         self.addCartButton = [[UIButton alloc] initWithFrame:CGRectMake(ScreenWidth-60-12-25, 12.5+68-25, 25, 25)];
+         self.addCartButton = [[UIButton alloc] initWithFrame:CGRectMake(ScreenWidth-60-12-50, 12.5+68-40, 50, 50)];
         [self.addCartButton setImage:[UIImage imageNamed:@"hh_shop_cart_yellow"] forState:UIControlStateNormal];
 //        self.addCartButton.layer.cornerRadius = 8;
 //        self.addCartButton.layer.masksToBounds = YES;

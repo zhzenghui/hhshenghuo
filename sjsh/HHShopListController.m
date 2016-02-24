@@ -729,6 +729,46 @@
 }
 
 
+
+- (void)AddtoCartSuccess:(ASIHTTPRequest *)request{
+    [super hideGif];
+    NSDictionary *completeDic = [super parseJsonRequest:request];
+    NSLog(@"添加购物车成功dic%@！！！！！！",completeDic);
+    NSString *code = [completeDic objectForKey:@"code"];
+    NSString *msg = nil;
+    switch ([code integerValue]) {
+        case 200:
+            //添加成功
+           [super getCartNum];
+           msg = @"已成功添加到购物车";
+            
+            break;
+        case 6002:
+            //添加成功
+            msg = @"参数错误";
+            break;
+        case 6003:
+            //添加成功
+            msg = @"请选择规格";
+            break;
+        default:
+            msg = [completeDic objectForKey:@"msg"];
+            break;
+    }
+    if (msg) {
+        //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        //        [alert show];
+    }
+    
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request{
+    [super hideGif];
+    NSDictionary *dic = [super parseJsonRequest:request];
+    NSLog(@"接口调用失败dic%@",dic);
+}
+
+
 //#pragma mark UISearchBar代理
 //
 //-(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -766,8 +806,15 @@
 
     NSLog(@"即将购买的商品为%@!!!!!!!!",myDictionary);
 
+    NSDictionary *product = myDictionary;
+    NSMutableDictionary *addDic = [NSMutableDictionary dictionary];
+    [addDic setObject:[product objectForKey:@"product_id"] forKey:@"product_id"];
+    
+    [addDic setObject:@"1" forKey:@"quantity"];
+    
+    [commonModel requestAddtoCart:addDic httpRequestSucceed:@selector(AddtoCartSuccess:) httpRequestFailed:@selector(AddtoCartFail:)];
+    
 }
-
 
 
 #pragma mark - textFile代理
