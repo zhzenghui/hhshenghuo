@@ -681,7 +681,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    [super showGif];
+   
     
     [super viewWillAppear:NO];
     //    [MobClick beginLogPageView:@"PageFour"];
@@ -689,6 +689,7 @@
     
     NSLog(@"获取用户登陆状态！！！！！！")
     if ([[ConstObject instance] isLogin]) {
+         [super showGif];
         NSLog(@"获取用户登陆状态为已登录")
         [commonModel requestUserinfo:nil
                   httpRequestSucceed:@selector(requestUserInfoSuccess:)
