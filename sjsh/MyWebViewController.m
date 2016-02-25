@@ -41,7 +41,7 @@
     [self.myWebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     [self.myWebView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
     
-    self.myWebProgress = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    self.myWebProgress = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self.view addSubview:self.myWebProgress];
     
 }
@@ -64,7 +64,22 @@
         [self.myWebProgress setProgress:self.myWebView.estimatedProgress animated:true];
         //        NSLog(@"当前进度为%f!!!!",self.myWebView.estimatedProgress);
     }else if([keyPath isEqual:@"title"]) {
-        self.navigationItem.title = self.myWebView.title;
+ 
+        //设置标题
+        UILabel *aTitleLabel = nil;
+        aTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 44.0f)];
+        
+        aTitleLabel.text = self.myWebView.title;
+        aTitleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+        aTitleLabel.textAlignment = NSTextAlignmentCenter;
+        aTitleLabel.backgroundColor = [UIColor clearColor];
+        aTitleLabel.adjustsFontSizeToFitWidth = YES;
+        aTitleLabel.textColor = [UIColor whiteColor];
+        aTitleLabel.userInteractionEnabled = YES;
+        //    [backgroundView addSubview:aTitleLabel];
+        //    [aTitleLabel release];
+        //    self.navigationItem.title = titlename;
+        [self.navigationItem setTitleView:aTitleLabel];
     }
 }
 @end
