@@ -219,7 +219,7 @@
     self.addressContentText.translatesAutoresizingMaskIntoConstraints = NO;
     self.addressContentText.delegate = self;
     self.addressContentText.font = [UIFont systemFontOfSize:14];
-    self.addressContentText.keyboardType = UIKeyboardTypeNumberPad;
+//    self.addressContentText.keyboardType = UIKeyboardTypeNumberPad;
     [self.addressContentText setPlaceholder:@"请输入地址"];
     [self.addressContentText setBorderStyle:UITextBorderStyleNone];
     [self.addressView addSubview:self.addressContentText];

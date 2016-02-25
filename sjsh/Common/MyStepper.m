@@ -64,8 +64,8 @@
     self.numberLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.numberLabel.text = @"0";
     self.numberLabel.textAlignment = NSTextAlignmentCenter;
-    self.numberLabel.font = [UIFont systemFontOfSize:15];
-    self.numberLabel.textColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1];
+    self.numberLabel.font = [UIFont boldSystemFontOfSize:15];
+    self.numberLabel.textColor = [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1];
     //给图层添加一个有色边框
 //    self.numberLabel.layer.borderWidth = 0.5;
 //    self.numberLabel.layer.borderColor = [[UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1] CGColor];

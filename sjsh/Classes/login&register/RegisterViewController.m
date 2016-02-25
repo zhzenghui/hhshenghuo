@@ -126,14 +126,14 @@
 //        inputImageView.image = [UIImage imageNamed:@"dingbutu"];
 //        [self.view addSubview:inputImageView];
 
-        InputItemModel *input = [[InputItemModel alloc] initWithFrame:CGRectMake(33,50, 254, 45) iconImage:@"shouji" text:@"" placeHolderText:@"输入手机号"];
+        InputItemModel *input = [[InputItemModel alloc] initWithFrame:CGRectMake(33,50, 254, 42) iconImage:@"shouji" text:@"" placeHolderText:@"输入手机号"];
         //  输入框
         [self.view addSubview:input];
         self.inputTextField = input.textField;
 
         // 按钮
         UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        competeBtn.frame = CGRectMake(35, 130 , 250, 44);
+        competeBtn.frame = CGRectMake(35, input.frame.origin.y+input.frame.size.height+50 , 250, 50);
 //        [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
         [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
@@ -159,7 +159,7 @@
 //        }
         for (int i = 0; i<4; i++) {
             //  输入框
-            CGRect rect = CGRectMake(35,startY+60*i, 250, 44);
+            CGRect rect = CGRectMake(35,startY+57*i, 250, 42);
 //            UIImageView *inputImageView = [[UIImageView alloc] initWithFrame:CGRectMake(35,top_H + 90 - 44+60*i, 250, 44)];
 //            inputImageView.image = INPUT_BG;
 //            [self.view addSubview:inputImageView];
@@ -232,7 +232,7 @@
         
         // 按钮
         UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        competeBtn.frame = CGRectMake(35, startY+60*5+20 , 250, 44);
+        competeBtn.frame = CGRectMake(35, startY+57*4+50 , 250, 50);
 //        [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
         [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];

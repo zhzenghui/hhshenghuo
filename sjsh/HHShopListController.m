@@ -275,8 +275,8 @@
 //        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(leftItemClick:)];
 //        [leftItemLaebl addGestureRecognizer:tapGesture];
         
-        NSString *title = [Item objectForKey:@"title"];
-        if (title.length>2) {
+        NSString *title = [Item objectForKey:@"name"];
+        if (title.length>3) {
 //             title = [title substringToIndex:1];//截取下标7之前的字符串
             title = [NSString stringWithFormat:@"%@\n%@",[title substringToIndex:2],[title substringFromIndex:2]];
         }
@@ -400,7 +400,7 @@
     NSDictionary *dic = [super parseJsonRequest:request];
     NSLog(@"获取商品类别：%@",dic);
     
-    self.categoryListArray = [NSMutableArray arrayWithArray:[dic objectForKey:@"result"]];
+    self.categoryListArray = [NSMutableArray arrayWithArray:[dic objectForKey:@"result"][@"data"]];
     //    self.allCount = [NSString stringWithFormat:@"%@",[[dic objectForKey:@"result"] objectForKey:@"count"]];
     [self addCategoryItem];
     

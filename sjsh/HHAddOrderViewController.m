@@ -974,11 +974,11 @@
     freightLabel.text = [NSString stringWithFormat:@"运费￥%@",myDictionary[@"yunfei"]];
     freightLabel.textAlignment = NSTextAlignmentRight;
     freightLabel.textColor = [UIColor colorWithRed:250.0/255.0 green:99.0/255.0 blue:56.0/255.0 alpha:1.0];
-    freightLabel.font = [UIFont systemFontOfSize:14];
+    freightLabel.font = [UIFont boldSystemFontOfSize:14];
     [hView addSubview:freightLabel];
     
     if (section>0) {
-        UIImageView *lineView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, ScreenWidth-20, 1)];
+        UIImageView *lineView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, ScreenWidth-40, 0.5)];
         lineView.backgroundColor = lineGrayColor;
         [hView addSubview:lineView];
     }

@@ -57,7 +57,7 @@
 //            jinduImageView.image = [UIImage imageNamed:@"jindu3-1"];
              [self.preferentialPageControl setCurrentPage:0];
             
-            CGRect rect = CGRectMake(35,startY+60*0, 250, 44);
+            CGRect rect = CGRectMake(35,startY+57*0, 250, 42);
             InputItemModel *input = [[InputItemModel alloc] initWithFrame:rect iconImage:@"shouji" text:@"" placeHolderText: @"输入手机号"];
             //  输入框
             input.delegate = self;
@@ -65,10 +65,10 @@
             self.TextField1 = input.textField;
             // 按钮
             UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-            competeBtn.frame = CGRectMake(35, startY+60*1+20 , 250, 44);
+            competeBtn.frame = CGRectMake(35, startY+57*1+50 , 250, 50);
 //            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
             [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
+            [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:18]];
             competeBtn.layer.cornerRadius = 5;
             competeBtn.layer.masksToBounds = YES;
             competeBtn.backgroundColor = kRedColor;
@@ -84,7 +84,7 @@
 //            jinduImageView.image = [UIImage imageNamed:@"jindu3-2"];
              [self.preferentialPageControl setCurrentPage:1];
             
-            CGRect rect = CGRectMake(35,startY+60*0, 250, 44);
+            CGRect rect = CGRectMake(35,startY+57*0, 250, 42);
             InputItemModel *input = [[InputItemModel alloc] initWithFrame:rect iconImage:@"yanzhengma" text:@"" placeHolderText: @"输入验证码"];
             //  输入框
             input.delegate = self;
@@ -93,10 +93,10 @@
             
             // 按钮
             UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-            competeBtn.frame = CGRectMake(35, startY+60*1+20 , 250, 44);
+            competeBtn.frame = CGRectMake(35, startY+57*1+50 , 250, 50);
 //            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
             [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
+            [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:18]];
             competeBtn.layer.cornerRadius = 5;
             competeBtn.layer.masksToBounds = YES;
             competeBtn.backgroundColor = kRedColor;
@@ -112,7 +112,7 @@
 //            jinduImageView.image = [UIImage imageNamed:@"jindu3-3"];
              [self.preferentialPageControl setCurrentPage:2];
             
-            CGRect rect = CGRectMake(35,startY+60*0, 250, 44);
+            CGRect rect = CGRectMake(35,startY+57*0, 250, 42);
             InputItemModel *input = [[InputItemModel alloc] initWithFrame:rect iconImage:@"password" text:@"" placeHolderText: @"输入新密码"];
             //  输入框
             input.delegate = self;
@@ -120,7 +120,7 @@
             self.TextField1 = input.textField;
             self.TextField1.secureTextEntry = YES;
             
-            CGRect rect1 = CGRectMake(35,startY+60*1, 250, 44);
+            CGRect rect1 = CGRectMake(35,startY+57*1, 250, 42);
             InputItemModel *input1 = [[InputItemModel alloc] initWithFrame:rect1 iconImage:@"password" text:@"" placeHolderText: @"再次输入密码"];
             //  输入框
             input1.delegate = self;
@@ -129,10 +129,10 @@
             self.TextField2.secureTextEntry = YES;
             // 按钮
             UIButton *competeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-            competeBtn.frame = CGRectMake(35, startY+60*2+20 , 250, 44);
+            competeBtn.frame = CGRectMake(35, startY+57*2+20 , 250, 50);
 //            [competeBtn setBackgroundImage:LOGIN_BTN_BG forState:UIControlStateNormal];
             [competeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:17]];
+            [competeBtn.titleLabel setFont:[UIFont systemFontOfSize:18]];
             competeBtn.layer.cornerRadius = 5;
             competeBtn.layer.masksToBounds = YES;
             competeBtn.backgroundColor = kRedColor;

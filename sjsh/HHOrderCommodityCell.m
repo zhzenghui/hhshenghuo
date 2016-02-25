@@ -20,18 +20,23 @@
         
         self.commodityContent = [[UILabel alloc] initWithFrame:CGRectMake(80, 20, 100, 15)];
         self.commodityContent.font = [UIFont systemFontOfSize:12];
+        self.commodityContent.textColor = fontGrayColor;
         [self.contentView addSubview:self.commodityContent];
         
         self.commoditySize = [[UILabel alloc] initWithFrame:CGRectMake(80, 35, 100, 15)];
+        self.commoditySize.font = [UIFont systemFontOfSize:12];
+        self.commoditySize.textColor = fontDilutedGrayColor;
         [self.contentView addSubview:self.commoditySize];
         
         self.commodityPrice = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth-100, 0, 80, 15)];
         self.commodityPrice.textAlignment = NSTextAlignmentRight;
         self.commodityPrice.textColor = [UIColor colorWithRed:250.0/255.0 green:99.0/255.0 blue:56.0/255.0 alpha:1.0];
+        self.commodityPrice.font = [UIFont systemFontOfSize:12];
         [self.contentView addSubview:self.commodityPrice];
         
         self.commodityTitle = [[UILabel alloc] initWithFrame:CGRectMake(80, 0, ScreenWidth-70-70, 15)];
         self.commodityTitle.font = [UIFont systemFontOfSize:12];
+        self.commodityTitle.textColor = fontGrayColor;
         [self.contentView addSubview:self.commodityTitle];
         
         self.myStepper = [[MyStepper alloc] initWithFrame:CGRectMake(ScreenWidth-110, 20, 90, 30)];

@@ -68,8 +68,8 @@ alpha:0.8])
 #define TEST_COLOR ([UIColor clearColor])
 #endif
 
-#define prefix_url     @"http://www.sjsh8.cn/"    //世纪生活
-//#define prefix_url     @"http://sjsh.weplays.cn/"   //淮海生活
+//#define prefix_url     @"http://www.sjsh8.cn/"    //世纪生活
+#define prefix_url     @"http://sjsh.weplays.cn/"   //淮海生活
 
 
 
@@ -172,7 +172,7 @@ alpha:0.8])
 
 #define kCommentlist  [NSString stringWithFormat:@"%@%@",prefix_url,@"index.php?route=mobile/product/commentlist"]
 
-#define kCategory_icon  [NSString stringWithFormat:@"%@%@",prefix_url,@"index.php?route=mobile/home/category_icon"]
+#define kCategory_icon  [NSString stringWithFormat:@"%@%@",prefix_url,@"/mobile/shop/shopcategory"]
 
 #define kHideColor [NSString stringWithFormat:@"%@%@",prefix_url,@"kHideColor"]
 

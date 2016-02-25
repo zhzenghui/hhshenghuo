@@ -19,6 +19,7 @@
 #import "QuickmarkViewController.h"
 #import "HHHomeCell.h"
 #import "ShoppingCartController.h"
+#import "HHShopListController.h"
 
 @interface HHHomeController (){
     float screenDistance ;//屏幕左右两边的边距
@@ -30,26 +31,26 @@
 
 @property(nonatomic,strong)UIView *entryView;//入口区域
 @property(nonatomic,strong)UILabel *entryTitleLabel;//入口标题
-@property(nonatomic,strong)UIView *registrationView;//预约挂号
+@property(nonatomic,strong)UIButton *registrationView;//预约挂号
 @property(nonatomic,strong)UIImageView *registrationImageView;
 @property(nonatomic,strong)UILabel *registrationLabel;
-@property(nonatomic,strong)UIView *shoppingView;//生活商城
+@property(nonatomic,strong)UIButton *shoppingView;//生活商城
 @property(nonatomic,strong)UIImageView *shoppingImageView;
 @property(nonatomic,strong)UILabel *shoppingLabel;
-@property(nonatomic,strong)UIView *welfareView;//公会福利
+@property(nonatomic,strong)UIButton *welfareView;//公会福利
 @property(nonatomic,strong)UIImageView *welfareImageView;
 @property(nonatomic,strong)UILabel *welfareLabel;
 
 @property(nonatomic,strong)UIView *recommendView;//推荐区域
-@property(nonatomic,strong)UIView *recommendOneView;//第一推荐
+@property(nonatomic,strong)UIButton *recommendOneView;//第一推荐
 @property(nonatomic,strong)UIImageView *recommendOneImageView;
 @property(nonatomic,strong)UIImageView *recommendOneIco;
 @property(nonatomic,strong)UILabel *recommendOneLabel;
-@property(nonatomic,strong)UIView *recommendTwoView;//第二推荐
+@property(nonatomic,strong)UIButton *recommendTwoView;//第二推荐
 @property(nonatomic,strong)UIImageView *recommendTwoImageView;
 @property(nonatomic,strong)UILabel *recommendTwoLabel;
 @property(nonatomic,strong)UILabel *recommendTwoContent;
-@property(nonatomic,strong)UIView *recommendThreeView;//第三推荐
+@property(nonatomic,strong)UIButton *recommendThreeView;//第三推荐
 @property(nonatomic,strong)UIImageView *recommendThreeImageView;
 @property(nonatomic,strong)UILabel *recommendThreeLabel;
 @property(nonatomic,strong)UILabel *recommendThreeContent;
@@ -215,7 +216,9 @@
         [self.entryView addSubview:self.entryTitleLabel];
         
         //预约挂号
-        self.registrationView = [[UIView alloc]initWithFrame:CGRectMake(33, self.entryTitleLabel.frame.origin.y+self.entryTitleLabel.frame.size.height+15, 50, 70)];
+        self.registrationView = [[UIButton alloc]initWithFrame:CGRectMake(33, self.entryTitleLabel.frame.origin.y+self.entryTitleLabel.frame.size.height+15, 50, 70)];
+        self.registrationView.tag = 198801;
+        [self.registrationView addTarget:self action:@selector(entryClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.entryView addSubview:self.registrationView];
         
         self.registrationImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 45, 45)];
@@ -231,7 +234,9 @@
         
         
         //生活商城
-        self.shoppingView = [[UIView alloc]initWithFrame:CGRectMake(ScreenWidth*0.5-25, self.entryTitleLabel.frame.origin.y+self.entryTitleLabel.frame.size.height+15, 50, 70)];
+        self.shoppingView = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth*0.5-25, self.entryTitleLabel.frame.origin.y+self.entryTitleLabel.frame.size.height+15, 50, 70)];
+         self.shoppingView.tag = 198802;
+         [self.shoppingView addTarget:self action:@selector(entryClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.entryView addSubview:self.shoppingView];
         
         self.shoppingImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 45, 45)];
@@ -246,7 +251,9 @@
         [self.shoppingView addSubview:self.shoppingLabel];
         
         //公会福利
-        self.welfareView = [[UIView alloc]initWithFrame:CGRectMake(ScreenWidth-50-33, self.entryTitleLabel.frame.origin.y+self.entryTitleLabel.frame.size.height+15, 50, 70)];
+        self.welfareView = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth-50-33, self.entryTitleLabel.frame.origin.y+self.entryTitleLabel.frame.size.height+15, 50, 70)];
+         self.welfareView.tag = 198803;
+         [self.welfareView addTarget:self action:@selector(entryClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.entryView addSubview:self.welfareView];
         
         self.welfareImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 45, 45)];
@@ -271,8 +278,10 @@
         [tableSubView addSubview:self.recommendView];
         
         //第一推荐
-        self.recommendOneView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth*0.5, self.recommendView.frame.size.height)];
+        self.recommendOneView = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth*0.5, self.recommendView.frame.size.height)];
         self.recommendOneView.backgroundColor = [UIColor whiteColor];
+          self.recommendOneView.tag = 198811;
+        [self.recommendOneView addTarget:self action:@selector(entryClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.recommendView addSubview:self.recommendOneView];
         
         self.recommendOneImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, self.recommendOneView.frame.size.width-30, self.recommendOneView.frame.size.height-20)];
@@ -297,8 +306,10 @@
         [self.recommendOneView  addSubview:recommendOneLine];
         
         //第二推荐
-        self.recommendTwoView = [[UIView alloc]initWithFrame:CGRectMake(ScreenWidth*0.5, 0, ScreenWidth*0.5, self.recommendView.frame.size.height*0.5)];
+        self.recommendTwoView = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth*0.5, 0, ScreenWidth*0.5, self.recommendView.frame.size.height*0.5)];
         self.recommendTwoView.backgroundColor = [UIColor whiteColor];
+          self.recommendTwoView.tag = 198812;
+        [self.recommendTwoView addTarget:self action:@selector(entryClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.recommendView addSubview:self.recommendTwoView];
         
         self.recommendTwoImageView = [[UIImageView alloc]initWithFrame:CGRectMake(self.recommendTwoView.frame.size.width-85, 0, 70, self.recommendTwoView.frame.size.height)];
@@ -325,8 +336,10 @@
         
         
         //第三推荐
-        self.recommendThreeView = [[UIView alloc]initWithFrame:CGRectMake(ScreenWidth*0.5, self.recommendView.frame.size.height*0.5, ScreenWidth*0.5, self.recommendView.frame.size.height*0.5)];
+        self.recommendThreeView = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth*0.5, self.recommendView.frame.size.height*0.5, ScreenWidth*0.5, self.recommendView.frame.size.height*0.5)];
         self.recommendThreeView.backgroundColor = [UIColor whiteColor];
+          self.recommendThreeView.tag = 198813;
+        [self.recommendThreeView addTarget:self action:@selector(entryClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.recommendView addSubview:self.recommendThreeView];
         
         self.recommendThreeImageView = [[UIImageView alloc]initWithFrame:CGRectMake(self.recommendThreeView.frame.size.width-85, 0, 70, self.recommendThreeView.frame.size.height)];
@@ -562,6 +575,35 @@
     
 }
 
+//快捷入口点击事件
+-(void)entryClick: (UIButton*)myButton{
+    NSInteger mytag = myButton.tag;
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"敬请期待！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    switch (mytag) {
+        case 198801:
+            [self enterURLPage:@"https://www.hao123.com/?tn=90995709_hao_pg"];
+            break;
+        case 198802:
+             [[AppDelegate shareDelegate] tabClickAction:[AppDelegate shareDelegate].formTab];
+            break;
+        case 198803:
+            [alert show];
+            break;
+        case 198811:
+            [self goPageByURL:@"sjsh://category?id=583"];
+            break;
+        case 198812:
+            [self goPageByURL:@"sjsh://category?id=580"];
+            break;
+        case 198813:
+            [self goPageByURL:@"sjsh://category?id=581"];
+            break;
+        default:
+            break;
+    }
+}
+
+
 //进入购物车页面
 - (void)gotoBuyingCarPage
 {
@@ -580,16 +622,47 @@
     UIImageView *imageView = (UIImageView *)tapGesture.view;
     NSInteger index = imageView.tag;
     //    [self enterURLPage:self.topBannerArray[index][@"url"]];
-    [self goPageByURL:self.topBannerArray[index][@"url"]];
+    [self enterURLPage:self.topBannerArray[index][@"url"]];
 }
+
+
 
 //根据网址跳转到不同页面
 - (void)goPageByURL:(NSString *)urlStr{
     
     NSLog(@"即将跳转到url:%@!!!!!!",urlStr);
-            [self enterURLPage:urlStr];//跳转网页
- 
+    if ([urlStr hasPrefix:@"sjsh://orders/?order_id="]) {//跳转到订单详情
+        NSLog(@"跳转到订单详情!!!!!!");
+        //进入订单页
+        //        [super pushToOrderPage];
+        NSString *orderId = [urlStr stringByReplacingOccurrencesOfString:@"sjsh://orders/?order_id=" withString:@""];
+        MyOrderDetailViewController *detailVc = [[MyOrderDetailViewController alloc] init];
+        detailVc.orderID = orderId;
+        [self.navigationController pushViewController:detailVc animated:YES];
+    }else if ([urlStr hasPrefix:@"sjsh://product?id="]){//跳转到商品详情
+        NSLog(@"跳转到商品详情!!!!!!");
+        NSString *productID = [urlStr stringByReplacingOccurrencesOfString:@"sjsh://product?id=" withString:@""];
+        CommodityDetailController *myController = [[CommodityDetailController alloc] init];
+        myController.productID = productID;
+        [self.navigationController pushViewController:myController animated:YES];
+    }else if ([urlStr hasPrefix:@"sjsh://category?id="]){//跳转到商品列表
+        NSLog(@"跳转到商品列表!!!!!!");
+        NSString *categoryID = [urlStr stringByReplacingOccurrencesOfString:@"sjsh://category?id=" withString:@""];
+     
+        HHShopListController *myController = [[HHShopListController alloc]init];
+        myController.theCategoryId = categoryID;
+         [[ConstObject instance] setCategoryId:categoryID];
+        [self.navigationController pushViewController:myController animated:YES];
+        
+//        [[ConstObject instance] setCategoryId:categoryID];
+//        [[AppDelegate shareDelegate] tabClickAction:[AppDelegate shareDelegate].shangpinTab];
+    }else{
+        NSLog(@"跳转到网页!!!!!!");
+        [self enterURLPage:urlStr];//跳转网页
+    }
+    
 }
+
 
 //根据点击的url跳转页面
 - (void)enterURLPage:(NSString *)url

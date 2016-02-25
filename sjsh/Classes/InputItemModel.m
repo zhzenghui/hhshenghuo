@@ -18,7 +18,7 @@
         self.backgroundColor = [UIColor clearColor];
         self.userInteractionEnabled = YES;
         self.image = INPUT_BG;
-        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(12,10, 24, 24)];
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(14,12, 20, 20)];
         icon.image = [UIImage imageNamed:imageName];
         [self addSubview:icon];
         self.iconImageView = icon;
