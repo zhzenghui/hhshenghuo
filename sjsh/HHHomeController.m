@@ -590,7 +590,7 @@
             [alert show];
             break;
         case 198811:
-            [self goPageByURL:@"sjsh://category?id=583"];
+            [self goPageByURL:@"sjsh://category?id=582"];
             break;
         case 198812:
             [self goPageByURL:@"sjsh://category?id=580"];

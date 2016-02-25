@@ -559,7 +559,7 @@
 
     NSString *urlString = [NSString stringWithFormat:kProductList];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"正在访问：%@",urlString);
+    NSLog(@"正在访问：%@%@",urlString,info);
     [super post:urlString params:info httpRequestSuccess:httpRequestSucceed httpRequestFailed:httpRequestFailed];
 
 }

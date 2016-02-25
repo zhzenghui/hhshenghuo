@@ -85,22 +85,6 @@
      [super addRightButton:@"购物车" lightedImage:@"购物车" selector:@selector(gotoBuyingCarPage)];
     [super setHintNum:[[ConstObject instance] cartNum]];
     
-    self.stringSort = @"{\"code\":200,\"status\":\"OK\",\"result\":[{\"title\":\"\u5168\u90e8\",\"img_on\":\"all_on.png\",\"img\":\"all.png\",\"category_id\":59},{\"title\":\"\u852c\u83dc\",\"img_on\":\"shucai_on.png\",\"img\":\"shucai.png\",\"category_id\":359},{\"title\":\"\u6c34\u679c\",\"img_on\":\"shuiguo_on.png\",\"img\":\"shuiguo.png\",\"category_id\":272},{\"title\":\"\u7cae\u6cb9\u526f\u98df\",\"img_on\":\"liangyou_on.png\",\"img\":\"liangyou.png\",\"category_id\":64},{\"title\":\"\u8089\u79bd\u5976\u86cb\",\"img_on\":\"rouqin_on.png\",\"img\":\"rouqin.png\",\"category_id\":65},{\"title\":\"\u96f6\u98df\u9152\u6c34\",\"img_on\":\"lingshijiushui_on.png\",\"img\":\"lingshijiushui.png\",\"category_id\":69},{\"title\":\"\u6709\u673a\u98df\u54c1\",\"img_on\":\"youjishipin_on.png\",\"img\":\"youjishipin.png\",\"category_id\":300}]}";
-    
-    self.stringList = @"{\"code\":200,\"status\":\"OK\",\"result\":{\"count\":516,\"data\":[{\"product_id\":\"6930\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e00\u68f5\u6811\u6838\u6843 500g\",\"meta_description\":\"\u5e72\u679c\u7f8e\u98df\uff0c\u8f7b\u677e\u4eab\u7528\",\"price\":\"35.00\",\"special\":\"35.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20151123\/1448258932931829-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"5943\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e09\u90fd\u6e2f\u5c0f\u9ec4\u82b1\u9c7c500g\",\"meta_description\":\"\u4ea7\u81ea\u798f\u5efa\u5b81\u5fb7-\u9ec4\u9c7c\u4e4b\u4e61\uff1b\u9ec4\u9c7c\u9c7c\u8089\u7ec4\u7ec7\u67d4\u8f6f\uff0c\u8089\u5ae9\u7ec6\u523a\u5c11\uff0c\u6613\u4e8e\u6d88\u5316\u3002\",\"price\":\"35.00\",\"special\":\"35.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20150901\/1441075622549110-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"6963\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e09\u9ec4\u9e21 500g\",\"meta_description\":\"\u751f\u9c9c\u7c7b\u4ef7\u683c\u6839\u636e\u4ea7\u54c1\u65f6\u4ee4\u8c03\u6574\uff0c\u6b64\u4ea7\u54c1\u4ee5\u6536\u5230\u7684\u5b9e\u9645\u91cd\u91cf\u8ba1\u7b97\u4ef7\u683c\u3002\",\"price\":\"15.00\",\"special\":\"15.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20151223\/1450885493946352-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"3477\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e1d\u74dc 500g\",\"meta_description\":\"\u679c\u852c\u7c7b\u4ef7\u683c\u6839\u636e\u4ea7\u54c1\u65f6\u4ee4\u8c03\u6574\uff0c\u6b64\u4ea7\u54c1\u4ee5\u6536\u5230\u7684\u5b9e\u9645\u91cd\u91cf\u8ba1\u7b97\u4ef7\u683c\u3002\",\"price\":\"8.00\",\"special\":\"8.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/data\/xianguoyuan\/140813103513-800-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"7011\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e1d\u74dc\u5c16 500g\",\"meta_description\":\"\u679c\u852c\u7c7b\u4ef7\u683c\u6839\u636e\u4ea7\u54c1\u65f6\u4ee4\u8c03\u6574\uff0c\u6b64\u4ea7\u54c1\u4ee5\u6536\u5230\u7684\u5b9e\u9645\u91cd\u91cf\u8ba1\u7b97\u4ef7\u683c\u3002\",\"price\":\"10.00\",\"special\":\"10.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20151215\/1450141840416216-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"4802\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e4c\u9e21\u86cb 15\u679a\",\"meta_description\":\"\u751f\u9c9c\u7c7b\u4ef7\u683c\u6839\u636e\u4ea7\u54c1\u65f6\u4ee4\u8c03\u6574\u3002\u6b64\u4ea7\u54c1\u4ee5\u6536\u5230\u7684\u5b9e\u9645\u91cd\u91cf\u679c\u852c\u7c7b\u4ef7\u683c\u6839\u636e\u4ea7\u54c1\u65f6\u4ee4\u8c03\u6574\u3002\u6b64\u4ea7\u54c1\u4ee5\u6536\u5230\u7684\u5b9e\u9645\u91cd\u91cf\u8ba1\u7b97\u4ef7\u683c\u3002\",\"price\":\"13.00\",\"special\":\"13.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20150819\/1439950519477691-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"6848\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e94\u5e38\u957f\u7c92\u9999\u5927\u7c73\",\"meta_description\":\"\u65b0\u7c73\u5b63--\u65b0\u7c73\u9a7e\u5230\uff0c\u5bb6\u4e2d\u5fc5\u5907\uff01\u8425\u517b\u4e30\u5bcc\uff0c\u9187\u9999\u53ef\u53e3\",\"price\":\"35.00\",\"special\":\"35.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20151013\/1444723326441545-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"6942\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e94\u82b1\u8089 500g\",\"meta_description\":\"\u751f\u9c9c\u7c7b\u4ef7\u683c\u6839\u636e\u4ea7\u54c1\u65f6\u4ee4\u8c03\u6574\uff0c\u6b64\u4ea7\u54c1\u4ee5\u6536\u5230\u7684\u5b9e\u9645\u91cd\u91cf\u8ba1\u7b97\u4ef7\u683c\u3002\",\"price\":\"17.00\",\"special\":\"17.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20151123\/1448261739964637-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"6937\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4e94\u9999\u82b1\u751f\u7c73 500g\",\"meta_description\":\"\u5e72\u679c\u7f8e\u98df\uff0c\u8f7b\u677e\u4eab\u7528\",\"price\":\"19.00\",\"special\":\"19.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20151123\/1448259899229825-128x128.jpg\",\"order_num\":\"0\"},{\"product_id\":\"5931\",\"flag\":\"0\",\"name\":\"\u793e\u533ae\u7ad9 \u4eac\u5e38\u4e00\u54c1\u6709\u673a\u7c735kg\",\"meta_description\":\"\u7c73\u7c92\u5747\u5300\uff0c\u8272\u6cfd\u5149\u4eae\uff0c\u9187\u539a\u7ef5\u957f\uff0c\u82b3\u9999\u56db\u6ea2\",\"price\":\"110.00\",\"special\":\"110.00\",\"image\":\"http:\/\/www.sjsh8.cn\/image\/cache\/cache\/data\/20150827\/1440639528485123-128x128.jpg\",\"order_num\":\"0\"}]}}";
-    
-    
-    
-    //    [super addButtonReturn:@"leftReturn" lightedImage:@"leftReturn" selector:@selector(toReturn)];
-    //    if (self.navigationItem) {
-    //        CGRect frame = CGRectMake(0.0, 0.0, 100.0, 40);
-    //        menu = [[SINavigationMenuView alloc] initWithFrame:frame title:@"全部"];
-    //        [menu displayMenuInView:self.navigationController.view];
-    //        menu.tag = 100000;
-    //        menu.items = [NSMutableArray arrayWithArray:@[@"全部"]];
-    //        menu.delegate = self;
-    //        [self.navigationItem.titleView addSubview:menu];
-    //    }
     
     page = 1;
     //    theCategoryId = @"59";
@@ -358,9 +342,9 @@
 //调用商品列表接口，返回数据
 -(void)fetchDataWithPage:(NSInteger)wantPage{
     [super showGif];
-    //    NSLog(@"开始调用商品列表接口%@！！！！！！！！！！",theCategoryId);
+        NSLog(@"开始调用商品列表接口%@！！！！！！！！！！",theCategoryId);
     if (theCategoryId==nil||[theCategoryId isEqualToString:@""]) {
-        theCategoryId = @"59";
+        theCategoryId = @"0";
     }
     NSLog(@"开始调用商品列表接口%@！！！！！！！！！！",theCategoryId);
     NSMutableDictionary *infoDictionary = [[NSMutableDictionary alloc] initWithCapacity:1];
@@ -409,7 +393,11 @@
         theCategoryId = [[ConstObject instance] categoryId];
         NSLog(@"存在类别编号%@！！！！！",theCategoryId);
         if (self.categoryListArray) {
-            NSArray *values = [self.categoryListArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self.category_id = %@",[NSNumber numberWithInt:[theCategoryId intValue]]]];
+            NSArray *values = [self.categoryListArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self.category_id = %@",theCategoryId]];
+            
+//            NSLog(@"查询类别%@----------%@!!!!!!!",self.categoryListArray,theCategoryId);
+            
+            
             if (values.count>0) {
                 NSLog(@"显示类别为%@！！！！！",[values objectAtIndex:0]);
                 NSInteger index = [self.categoryListArray indexOfObject:[values objectAtIndex:0]];
@@ -661,7 +649,7 @@
 {
     NSLog(@"did selected item at index %d", index);
     if(index == 0){
-        theCategoryId = @"59";
+        theCategoryId = @"0";
         page = 1;
         [self fetchDataWithPage:page];
     }else{
