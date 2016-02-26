@@ -262,7 +262,7 @@ alpha:0.8])
 
 #define get_room   [NSString stringWithFormat:@"%@%@",prefix_url,@"?route=mobile/user/ajax_all_fangjian&xiaoqu=%@&louhao=%@&danyuan=%@"]
 
-#define delete_address   [NSString stringWithFormat:@"%@%@",prefix_url,@"http://sjsh8.cn/index.php?route=mobile/user/deladdress_arr&address_ids=%@"]
+#define delete_address   [NSString stringWithFormat:@"%@%@",prefix_url,@"index.php?route=mobile/user/deladdress_arr&address_ids=%@"]
 
 #define member_index   [NSString stringWithFormat:@"%@%@",prefix_url,@"?route=mobile/home_new/vip_index"]
 

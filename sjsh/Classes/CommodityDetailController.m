@@ -984,7 +984,7 @@
     NSLog(@"标签的高度%f和%f！！！！！", expectedSize.height,commodityDescribeSize.height);
     
     
-    //存在商品描述
+    //存在商品描述                                                                            
     //    if(self.commodityDescribeLabel.text&&![self.commodityDescribeLabel.text isEqualToString:@""]){
     //        NSLog(@"存在商品描述！！！！！");
     //        self.commodityDescribeLabel.frame = CGRectMake(15, self.commodityNameLabel.frame.origin.y+self.commodityNameLabel.frame.size.height, ScreenWidth-20, 40);
