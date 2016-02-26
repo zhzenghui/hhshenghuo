@@ -572,7 +572,7 @@
 
 //提交购物订单接口成功
 - (void)requestSubmitOrderSuccess:(ASIHTTPRequest *)request{
-    
+    [super hideGif];
     NSDictionary *dic = [super parseJsonRequest:request];
     NSLog(@"提交订单接口：%@!!!!!!!!!!!",dic );
     

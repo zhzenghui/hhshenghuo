@@ -16,6 +16,7 @@
 #import "WXApi.h"
 #import "NSString+MD5Addition.h"
 #import "HHAdressViewController.h"
+#import "MyOrderListViewController.h"
 
 
 #define BASE_URL @"https://api.weixin.qq.com"
@@ -154,7 +155,7 @@
     self.orderCount = 0;
     self.commodityTransportationExpenses = 0;
 //    self.preferentialMoney = 0;
-    self.selectPayWayIDPosition = 1;//默认为微信
+    self.selectPayWayIDPosition = 0;//默认为货到付款
     self.isMember = NO;//默认不是会员
     self.isAddress = NO;//没有默认地址
     
@@ -1289,7 +1290,18 @@
             hud.yOffset = 150.f;
             hud.removeFromSuperViewOnHide = YES;
             [hud hide:YES afterDelay:1];
-            [self toReturn];
+//            [self toReturn];
+            
+            MyOrderListViewController  *myViewController = [[MyOrderListViewController alloc]init];
+            [self.navigationController pushViewController:myViewController animated:YES];
+            
+            NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+            [navigationArray removeObjectAtIndex: navigationArray.count-2];
+            [navigationArray removeObjectAtIndex: navigationArray.count-2]; // You can pass your index here
+            self.navigationController.viewControllers = navigationArray;
+
+            
+            
         }else  if ([payWay isEqual:@"unionpay"]){
             
             //调用下单接口
@@ -1355,7 +1367,19 @@
                                               cancelButtonTitle:@"确认"
                                               otherButtonTitles:nil, nil];
         [alert show];
-        [self toReturn];//返回上一页
+//        [self toReturn];//返回上一页
+        
+        MyOrderListViewController  *myViewController = [[MyOrderListViewController alloc]init];
+        [self.navigationController pushViewController:myViewController animated:YES];
+        
+        NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+         [navigationArray removeObjectAtIndex: navigationArray.count-2];
+        [navigationArray removeObjectAtIndex: navigationArray.count-2];  // You can pass your index here
+        self.navigationController.viewControllers = navigationArray;
+        
+     
+        
+        
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"支付结果"
                                                         message:@"支付失败"
@@ -1705,7 +1729,17 @@
     hud.yOffset = 150.f;
     hud.removeFromSuperViewOnHide = YES;
     [hud hide:YES afterDelay:1];
-    [self toReturn];//返回上一页
+//    [self toReturn];//返回上一页
+    
+    NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+    [navigationArray removeObjectAtIndex: navigationArray.count-2];  // You can pass your index here
+    self.navigationController.viewControllers = navigationArray;
+    
+    MyOrderListViewController  *myViewController = [[MyOrderListViewController alloc]init];
+    [self.navigationController pushViewController:myViewController animated:YES];
+    
+   
+    
 }
 
 #pragma mark UPPayPluginResult 银联代理方法，支付完成的回调

@@ -34,5 +34,6 @@
 
 @property(nonatomic,assign) BOOL  isFirst;//是否首次打开页面
 
+@property (nonatomic, strong) NSString *searchedContent;//输入完成的搜索内容
 
 @end

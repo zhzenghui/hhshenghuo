@@ -644,37 +644,45 @@
 //初始化列表数据
 -(void)initTableViewData{
     self.userDataArray = [[NSMutableArray alloc]init];
-    NSMutableDictionary *userDictionary = [[NSMutableDictionary alloc]init];
-    userDictionary[@"name"] = @"我的预约";
-    NSString *memberRemainderTitle =  [NSString stringWithFormat:@"余额  ￥%@元",self.memberRemainder];
-    userDictionary[@"content"] = self.isMember? memberRemainderTitle:@"";
-    userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_appointment"];
-    [self.userDataArray addObject:userDictionary];
+    NSMutableDictionary *userDictionary = nil;
+    
     userDictionary = [[NSMutableDictionary alloc]init];
     userDictionary[@"name"] = @"我的订单";
     userDictionary[@"content"] = @"";
     userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_order"];
     [self.userDataArray addObject:userDictionary];
-    userDictionary = [[NSMutableDictionary alloc]init];
-    userDictionary[@"name"] = @"我的积分";
-    userDictionary[@"content"] = @"";
-    userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_ integral"];
-    [self.userDataArray addObject:userDictionary];
-    userDictionary = [[NSMutableDictionary alloc]init];
-    userDictionary[@"name"] = @"我的福利";
-    userDictionary[@"content"] = @"";
-    userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_welfare"];
-    [self.userDataArray addObject:userDictionary];
-    userDictionary = [[NSMutableDictionary alloc]init];
-    userDictionary[@"name"] = @"用药提醒";
-    userDictionary[@"content"] = @"";
-    userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_remind"];
-    [self.userDataArray addObject:userDictionary];
+    
     userDictionary = [[NSMutableDictionary alloc]init];
     userDictionary[@"name"] = @"我的收藏";
     userDictionary[@"content"] = @"";
     userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_collect"];
     [self.userDataArray addObject:userDictionary];
+    
+    userDictionary = [[NSMutableDictionary alloc]init];
+    userDictionary[@"name"] = @"我的预约";
+    NSString *memberRemainderTitle =  [NSString stringWithFormat:@"余额  ￥%@元",self.memberRemainder];
+    userDictionary[@"content"] = self.isMember? memberRemainderTitle:@"";
+    userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_appointment"];
+    [self.userDataArray addObject:userDictionary];
+   
+    userDictionary = [[NSMutableDictionary alloc]init];
+    userDictionary[@"name"] = @"我的积分";
+    userDictionary[@"content"] = @"";
+    userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_ integral"];
+    [self.userDataArray addObject:userDictionary];
+    
+    userDictionary = [[NSMutableDictionary alloc]init];
+    userDictionary[@"name"] = @"我的福利";
+    userDictionary[@"content"] = @"";
+    userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_welfare"];
+    [self.userDataArray addObject:userDictionary];
+    
+    userDictionary = [[NSMutableDictionary alloc]init];
+    userDictionary[@"name"] = @"用药提醒";
+    userDictionary[@"content"] = @"";
+    userDictionary[@"image"] = [UIImage imageNamed:@"hh_user_remind"];
+    [self.userDataArray addObject:userDictionary];
+   
     
     [profileTableView reloadData];
 }
@@ -804,31 +812,30 @@
      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"敬请期待！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     switch (indexPath.row) {
         case 0:
-            [alert show];
+            myViewController = [[MyOrderListViewController alloc]init];
+            [self.navigationController pushViewController:myViewController animated:YES];
+            
             break;
         case 1:
-            myViewController = [[MyOrderListViewController alloc]init];
+            myViewController = [[MyStoredViewController alloc] init];
             [self.navigationController pushViewController:myViewController animated:YES];
             break;
         case 2:
             [alert show];
             break;
         case 3:
-            //            myViewController = [[AddressViewController alloc]init];
-            //            [self.navigationController pushViewController:myViewController animated:YES];
+          
            [alert show];
             break;
         case 4:
-            //            settingViewController.delegate = self;
+           
           [alert show];
             break;
         case 5:
-            //            myViewController = [[AddressViewController alloc]init];
-            //            [self.navigationController pushViewController:myViewController animated:YES];
-            myViewController = [[MyStoredViewController alloc] init];
-            [self.navigationController pushViewController:myViewController animated:YES];
+          [alert show];
             break;
         default:
+             [alert show];
             break;
     }
     

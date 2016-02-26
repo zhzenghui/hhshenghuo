@@ -85,17 +85,17 @@
     
     [super initNavBarItems:@"淮海生活"];
     
-    leftButton = [UIButton  buttonWithType:UIButtonTypeCustom];
-    leftButton.backgroundColor = [UIColor clearColor];
-    [leftButton setTintColor:[UIColor whiteColor]];
-    leftButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
-    [leftButton setImage:[UIImage imageNamed:@"hh_ico_badge"] forState:UIControlStateNormal];
-    leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -0, 0, 10);
-    leftButton.frame = CGRectMake(0, 0, 100, 44);
-    leftButton.tag = NAME_MAX;
-    [leftButton setTitle:@"徐州总工会" forState:UIControlStateNormal];
-    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
+//    leftButton = [UIButton  buttonWithType:UIButtonTypeCustom];
+//    leftButton.backgroundColor = [UIColor clearColor];
+//    [leftButton setTintColor:[UIColor whiteColor]];
+//    leftButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+//    [leftButton setImage:[UIImage imageNamed:@"hh_ico_badge"] forState:UIControlStateNormal];
+//    leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -0, 0, 10);
+//    leftButton.frame = CGRectMake(0, 0, 100, 44);
+//    leftButton.tag = NAME_MAX;
+//    [leftButton setTitle:@"徐州总工会" forState:UIControlStateNormal];
+//    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
     
      [super addRightButton:@"hh_ico_cart" lightedImage:@"hh_ico_cart" selector:@selector(gotoBuyingCarPage)];
     
@@ -509,21 +509,20 @@
             NSDictionary *myDictionary = self.topBannerArray[i];
             
             if (i==0) {
-                UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(i*self.bannerScroll.frame.size.width+59, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
+                UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(i*self.bannerScroll.frame.size.width, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
                 [imageview setImageWithURL:[NSURL URLWithString:myEndDictionary[@"image"]]];
                 imageview.tag = maxIndex-1;
-                imageview.contentMode = UIViewContentModeScaleAspectFill;
+                imageview.contentMode = UIViewContentModeScaleToFill;
                 imageview.userInteractionEnabled = YES;
                 UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBannerImageView:)];
                 [imageview addGestureRecognizer:singleTap1];
                 [self.bannerScroll addSubview:imageview];
             }
             
-            UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake((i+1)*self.bannerScroll.frame.size.width+59, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
+            UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake((i+1)*self.bannerScroll.frame.size.width, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
             [imageview setImageWithURL:[NSURL URLWithString:myDictionary[@"image"]]];
-            imageview.contentMode = UIViewContentModeScaleAspectFill;
+            imageview.contentMode = UIViewContentModeScaleToFill;
             imageview.tag = i;
-            imageview.contentMode = UIViewContentModeScaleAspectFill;
             imageview.userInteractionEnabled = YES;
             UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBannerImageView:)];
             [imageview addGestureRecognizer:singleTap1];
@@ -531,11 +530,10 @@
             [self.bannerScroll addSubview:imageview];
             
             if (i==(maxIndex-1)) {
-                UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake((maxIndex+1)*self.bannerScroll.frame.size.width+59, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
+                UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake((maxIndex+1)*self.bannerScroll.frame.size.width, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
                 [imageview setImageWithURL:[NSURL URLWithString:myFirstDictionary[@"image"]]];
-                imageview.contentMode = UIViewContentModeScaleAspectFill;
+                imageview.contentMode = UIViewContentModeScaleToFill;
                 imageview.tag = 0;
-                imageview.contentMode = UIViewContentModeScaleAspectFill;
                 imageview.userInteractionEnabled = YES;
                 UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBannerImageView:)];
                 [imageview addGestureRecognizer:singleTap1];

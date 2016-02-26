@@ -24,8 +24,8 @@
 }
 
 @property (nonatomic, strong) UISearchBar *commoditySearchBar;//商品搜索框
-@property (nonatomic, strong) NSString *searchingContent;//正在输入的搜索内容
-@property (nonatomic, strong) NSString *searchedContent;//输入完成的搜索内容
+//@property (nonatomic, strong) NSString *searchingContent;//正在输入的搜索内容
+
 
 
 
@@ -360,7 +360,7 @@
     [infoDictionary setValue:[NSString stringWithFormat:@"%d",page] forKey:@"page"];
     if(self.searchedContent&&![self.searchedContent isEqualToString:@""]){//存在检索内容
         [infoDictionary setValue: self.searchedContent forKey:@" keywords"];//搜索字段
-        [infoDictionary setValue:@"all" forKey:@"category_id"];
+        [infoDictionary setValue:@"0" forKey:@"category_id"];
         //修改列表状态
         myItemIndex = 0;
     }

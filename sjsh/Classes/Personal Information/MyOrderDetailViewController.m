@@ -107,7 +107,7 @@
     //页面滚动视图
     self.pageScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     self.pageScroll.translatesAutoresizingMaskIntoConstraints = NO;
-    self.pageScroll.contentSize=CGSizeMake(ScreenWidth, 900);
+    self.pageScroll.contentSize=CGSizeMake(ScreenWidth, 800);
     self.pageScroll.showsHorizontalScrollIndicator=NO;
     self.pageScroll.showsVerticalScrollIndicator=NO;
     self.pageScroll.backgroundColor = [UIColor clearColor];
@@ -380,11 +380,16 @@
     //    self.listTableView.separatorColor = COLOR(178, 178, 178);
     //    [self.view addSubview:self.listTableView];
     
-    self.buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight-50-64, ScreenWidth, 50)];
-    self.buttonView.backgroundColor = dilutedGrayColor;
-    [self.view addSubview:self.buttonView];
     
-    [self initButtonView];//创建底部按钮区域
+    
+    
+    
+    
+//    self.buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight-50-64, ScreenWidth, 50)];
+//    self.buttonView.backgroundColor = dilutedGrayColor;
+//    [self.view addSubview:self.buttonView];
+//    
+//    [self initButtonView];//创建底部按钮区域
     
     
     //    self.dataArray = [NSMutableArray arrayWithObjects:@"",@"", nil];
@@ -1004,7 +1009,7 @@
     
     
     //动态创建中间的商品列表
-    self.pageScroll.contentSize=CGSizeMake(ScreenWidth, 800+productsCount*productHeight);
+    self.pageScroll.contentSize=CGSizeMake(ScreenWidth, 700+productsCount*productHeight);
     for (int i=0; i<productsCount; i++) {
         
         NSDictionary *productDictionary =  self.dataArray[i];

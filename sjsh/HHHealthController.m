@@ -39,19 +39,19 @@
     success1 = NO;
     success2 = NO;
     [self initNavBarItems:@"淮海生活"];
-    [super addRightButton:@"hh_ico_phone" lightedImage:@"hh_ico_phone" selector:@selector(callPhone)];
+//    [super addRightButton:@"hh_ico_phone" lightedImage:@"hh_ico_phone" selector:@selector(callPhone)];
     
-    leftButton = [UIButton  buttonWithType:UIButtonTypeCustom];
-    leftButton.backgroundColor = [UIColor clearColor];
-    [leftButton setTintColor:[UIColor whiteColor]];
-    leftButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
-    [leftButton setImage:[UIImage imageNamed:@"hh_ico_badge"] forState:UIControlStateNormal];
-    leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -0, 0, 10);
-    leftButton.frame = CGRectMake(0, 0, 100, 44);
-    leftButton.tag = NAME_MAX;
-    [leftButton setTitle:@"徐州总工会" forState:UIControlStateNormal];
-    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
+//    leftButton = [UIButton  buttonWithType:UIButtonTypeCustom];
+//    leftButton.backgroundColor = [UIColor clearColor];
+//    [leftButton setTintColor:[UIColor whiteColor]];
+//    leftButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+//    [leftButton setImage:[UIImage imageNamed:@"hh_ico_badge"] forState:UIControlStateNormal];
+//    leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, -0, 0, 10);
+//    leftButton.frame = CGRectMake(0, 0, 100, 44);
+//    leftButton.tag = NAME_MAX;
+//    [leftButton setTitle:@"徐州总工会" forState:UIControlStateNormal];
+//    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
     
     self.view.backgroundColor = dilutedGrayColor;
     self.bannerList = [NSArray array];
@@ -313,10 +313,10 @@
     for(int i=0;i<self.preferentialArray.count;i++){
         NSDictionary *myDictionary = self.preferentialArray[i];
         
-        UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(i*self.preferentialScroll.frame.size.width+7, 0, self.preferentialScroll.frame.size.width, self.preferentialScroll.frame.size.height)];
+        UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(i*self.preferentialScroll.frame.size.width, 0, self.preferentialScroll.frame.size.width, self.preferentialScroll.frame.size.height)];
         //         NSLog(@"getMiddleBanner图片地址为：%@！！！！",myDictionary[@"image"]);
         [imageview setImageWithURL:[NSURL URLWithString:myDictionary[@"image"]]];
-        imageview.contentMode = UIViewContentModeScaleAspectFill;
+        imageview.contentMode = UIViewContentModeScaleToFill;
         imageview.tag = i;
         //        imageview.contentMode = UIViewContentModeScaleAspectFill;
         imageview.userInteractionEnabled = YES;

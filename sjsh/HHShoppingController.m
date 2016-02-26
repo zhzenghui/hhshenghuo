@@ -19,6 +19,7 @@
 #import "QuickmarkViewController.h"
 #import "ShoppingCartController.h"
 #import "HHShopListController.h"
+#import "HHShoppingDetialController.h"
 
 
 #define mainUrl   @"http://www.sjsh8.cn/index.php?route=common/wap_index"
@@ -87,7 +88,7 @@
     
     //    [super addButtonReturn:@"erweima" lightedImage:@"erweima" selector:@selector(startZBarReaderViewController)];
     [super addRightButton:@"hh_ico_cart" lightedImage:@"hh_ico_cart" selector:@selector(gotoBuyingCarPage)];
-    [super addButtonReturn:@"hh_ico_menu" lightedImage:@"hh_ico_menu" selector:nil];
+//    [super addButtonReturn:@"hh_ico_menu" lightedImage:@"hh_ico_menu" selector:nil];
     
     screenDistance=5.0;
     maxIndex=0;
@@ -109,7 +110,6 @@
     [myDictionary setValue:@"食品" forKey:@"title2"];
     [myDictionary setValue:[UIColor colorWithRed:246.0/255.0 green:192.0/255.0 blue:75.0/255.0 alpha:1.0] forKey:@"color"];
      [myDictionary setValue:@"sjsh://category?id=581" forKey:@"href"];
-    
     [self.categoryCollectionArray addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -147,26 +147,63 @@
      [myDictionary setValue:@"sjsh://category?id=585" forKey:@"href"];
     [self.categoryCollectionArray addObject:myDictionary];
     
-    myDictionary = [[NSMutableDictionary alloc] init];
-    [myDictionary setValue:@"test_hh_shopping07" forKey:@"ico"];
-    [myDictionary setValue:@"养生会所" forKey:@"title2"];
-    [myDictionary setValue:[UIColor colorWithRed:192.0/255.0 green:211.0/255.0 blue:60.0/255.0 alpha:1.0] forKey:@"color"];
-     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
-    [self.categoryCollectionArray addObject:myDictionary];
+//    myDictionary = [[NSMutableDictionary alloc] init];
+//    [myDictionary setValue:@"test_hh_shopping07" forKey:@"ico"];
+//    [myDictionary setValue:@"养生会所" forKey:@"title2"];
+//    [myDictionary setValue:[UIColor colorWithRed:192.0/255.0 green:211.0/255.0 blue:60.0/255.0 alpha:1.0] forKey:@"color"];
+//     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
+//    [self.categoryCollectionArray addObject:myDictionary];
+//    
+//    myDictionary = [[NSMutableDictionary alloc] init];
+//    [myDictionary setValue:@"test_hh_shopping08" forKey:@"ico"];
+//    [myDictionary setValue:@"健身场所" forKey:@"title2"];
+//    [myDictionary setValue:[UIColor colorWithRed:246.0/255.0 green:192.0/255.0 blue:75.0/255.0 alpha:1.0] forKey:@"color"];
+//     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
+//    [self.categoryCollectionArray addObject:myDictionary];
+//    
+//    myDictionary = [[NSMutableDictionary alloc] init];
+//    [myDictionary setValue:@"test_hh_shopping09" forKey:@"ico"];
+//    [myDictionary setValue:@"生活百科" forKey:@"title2"];
+//    [myDictionary setValue:[UIColor colorWithRed:84.0/255.0 green:176.0/255.0 blue:224.0/255.0 alpha:1.0] forKey:@"color"];
+//     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
+//    [self.categoryCollectionArray addObject:myDictionary];
+    
+    //商品列表数据
+    
+    self.commodityCollectionArray = [[NSMutableArray alloc] init];
     
     myDictionary = [[NSMutableDictionary alloc] init];
-    [myDictionary setValue:@"test_hh_shopping08" forKey:@"ico"];
-    [myDictionary setValue:@"健身场所" forKey:@"title2"];
-    [myDictionary setValue:[UIColor colorWithRed:246.0/255.0 green:192.0/255.0 blue:75.0/255.0 alpha:1.0] forKey:@"color"];
-     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
-    [self.categoryCollectionArray addObject:myDictionary];
+    [myDictionary setValue:@"http://sjsh.weplays.cn/image/cache/cache/data/20160225/145641482675561-128x128.jpg" forKey:@"image"];
+    [myDictionary setValue:@"sjsh://product?id=7357" forKey:@"recommend_url"];
+    [myDictionary setValue:@"可比克 劲爆烧翅味 咔趣薯条 13g" forKey:@"com"];
+    [myDictionary setValue:@"1.10" forKey:@"price"];
+    [self.commodityCollectionArray addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
-    [myDictionary setValue:@"test_hh_shopping09" forKey:@"ico"];
-    [myDictionary setValue:@"生活百科" forKey:@"title2"];
-    [myDictionary setValue:[UIColor colorWithRed:84.0/255.0 green:176.0/255.0 blue:224.0/255.0 alpha:1.0] forKey:@"color"];
-     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
-    [self.categoryCollectionArray addObject:myDictionary];
+    [myDictionary setValue:@"http://sjsh.weplays.cn/image/cache/cache/data/20160225/1456415130817589-128x128.jpg" forKey:@"image"];
+    [myDictionary setValue:@"sjsh://product?id=7359" forKey:@"recommend_url"];
+    [myDictionary setValue:@"旺旺 仙贝 加量装 540g" forKey:@"com"];
+    [myDictionary setValue:@"23.90" forKey:@"price"];
+    [self.commodityCollectionArray addObject:myDictionary];
+    
+    myDictionary = [[NSMutableDictionary alloc] init];
+    [myDictionary setValue:@"http://sjsh.weplays.cn/image/cache/cache/data/20160225/145641425813748-128x128.jpg" forKey:@"image"];
+    [myDictionary setValue:@"sjsh://product?id=7355" forKey:@"recommend_url"];
+    [myDictionary setValue:@"春古 江西赣州赣南脐橙新鲜橙子" forKey:@"com"];
+    [myDictionary setValue:@"39.00" forKey:@"price"];
+    [self.commodityCollectionArray addObject:myDictionary];
+    
+    myDictionary = [[NSMutableDictionary alloc] init];
+    [myDictionary setValue:@"http://sjsh.weplays.cn/image/cache/cache/data/20160225/14564149837433-128x128.jpg" forKey:@"image"];
+    [myDictionary setValue:@"sjsh://product?id=7358" forKey:@"recommend_url"];
+    [myDictionary setValue:@"米多奇 烧烤风味 烤香馍片 50g" forKey:@"com"];
+    [myDictionary setValue:@"1.10" forKey:@"price"];
+    [self.commodityCollectionArray addObject:myDictionary];
+    
+    
+    
+    
+    
     
     
     
@@ -243,7 +280,7 @@
     fl.minimumInteritemSpacing = 0.0;//每列最小边距
     fl.minimumLineSpacing = 1;//每行最小边距
     
-    self.categoryCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, self.bannerScroll.frame.origin.y+self.bannerScroll.frame.size.height+0.5                                               , ScreenWidth, ScreenWidth+0.1) collectionViewLayout:fl];
+    self.categoryCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, self.bannerScroll.frame.origin.y+self.bannerScroll.frame.size.height+0.5                                               , ScreenWidth, (self.categoryCollectionArray.count*ScreenWidth/3/3)+0.1) collectionViewLayout:fl];
     self.categoryCollection.tag = 198801;
     self.categoryCollection.delegate = self;
     self.categoryCollection.dataSource = self;
@@ -289,6 +326,7 @@
     fl02.minimumLineSpacing = 1.0;//每行最小边距
     
     self.commodityCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, self.preferentialScroll.frame.origin.y+self.preferentialScroll.frame.size.height+10, ScreenWidth, (ScreenWidth)*0.5*1.537*2+5) collectionViewLayout:fl02];
+//    self.commodityCollection.frame = CGRectMake(0, 100, ScreenWidth, (ScreenWidth)*0.5*1.537*2+5);
     self.commodityCollection.tag = 198802;
     self.commodityCollection.delegate = self;
     self.commodityCollection.dataSource = self;
@@ -320,7 +358,19 @@
 //调用接口显示页面主体
 -(void)initUI{
     [super showGif];
-    [commonModel getTopBanner:nil httpRequestSucceed:@selector(requestTopBannerSuccess:) httpRequestFailed:@selector(requestFailed:)];
+    
+     [commonModel getTopBanner:nil httpRequestSucceed:@selector(requestTopBannerSuccess:) httpRequestFailed:@selector(requestFailed:)];
+    
+    //测试代码
+    float commodityCollectionHeight = (ScreenWidth)*0.5*1.537*(self.commodityCollectionArray.count/2)+2;
+    CGRect commodityCollectionCGRect = self.commodityCollection.frame;
+    commodityCollectionCGRect.size.height = commodityCollectionHeight;
+    NSLog(@"高度为：%lu！！！！",((self.commodityCollectionArray.count-1)/2)+1);//count从1开始
+    self.homeScroll.contentSize=CGSizeMake(self.bannerScroll.bounds.size.width, 710+commodityCollectionHeight);
+    self.commodityCollection.frame = commodityCollectionCGRect;
+    [self.commodityCollection reloadData];
+    
+   
     
 }
 
@@ -353,7 +403,7 @@
                 UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake(i*self.bannerScroll.frame.size.width, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
                 [imageview setImageWithURL:[NSURL URLWithString:myEndDictionary[@"image"]]];
                 imageview.tag = maxIndex-1;
-                imageview.contentMode = UIViewContentModeScaleAspectFill;
+                imageview.contentMode = UIViewContentModeScaleToFill;
                 imageview.userInteractionEnabled = YES;
                 UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBannerImageView:)];
                 [imageview addGestureRecognizer:singleTap1];
@@ -362,9 +412,8 @@
             
             UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake((i+1)*self.bannerScroll.frame.size.width, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
             [imageview setImageWithURL:[NSURL URLWithString:myDictionary[@"image"]]];
-            imageview.contentMode = UIViewContentModeScaleAspectFill;
+            imageview.contentMode = UIViewContentModeScaleToFill;
             imageview.tag = i;
-            imageview.contentMode = UIViewContentModeScaleAspectFill;
             imageview.userInteractionEnabled = YES;
             UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBannerImageView:)];
             [imageview addGestureRecognizer:singleTap1];
@@ -374,9 +423,8 @@
             if (i==(maxIndex-1)) {
                 UIImageView  *imageview=[[UIImageView alloc]initWithFrame:CGRectMake((maxIndex+1)*self.bannerScroll.frame.size.width, 0, self.bannerScroll.frame.size.width, self.bannerScroll.frame.size.height)];
                 [imageview setImageWithURL:[NSURL URLWithString:myFirstDictionary[@"image"]]];
-                imageview.contentMode = UIViewContentModeScaleAspectFill;
+                imageview.contentMode = UIViewContentModeScaleToFill;
                 imageview.tag = 0;
-                imageview.contentMode = UIViewContentModeScaleAspectFill;
                 imageview.userInteractionEnabled = YES;
                 UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBannerImageView:)];
                 [imageview addGestureRecognizer:singleTap1];
@@ -413,6 +461,9 @@
 
 //获取中间banner广告接口数据成功
 -(void)getMiddleBannerSuccess:(ASIHTTPRequest *)request{
+    
+    [super hideGif];
+    
     NSDictionary *dic = [super parseJsonRequest:request];
     //    dic = [super parseJsonRequestByTest:self.stringBanner02];
     NSLog(@"getMiddleBannerSuccess：%@！！！！",dic);
@@ -440,10 +491,10 @@
     }
     
     
+
     
     
-    
-    [commonModel getHomeCommodity:nil httpRequestSucceed:@selector(getHomeCommoditySuccess:) httpRequestFailed:@selector(requestFailed:)];
+//    [commonModel getHomeCommodity:nil httpRequestSucceed:@selector(getHomeCommoditySuccess:) httpRequestFailed:@selector(requestFailed:)];
     
 }
 
@@ -551,7 +602,7 @@
     }else if ([urlStr hasPrefix:@"sjsh://product?id="]){//跳转到商品详情
         NSLog(@"跳转到商品详情!!!!!!");
         NSString *productID = [urlStr stringByReplacingOccurrencesOfString:@"sjsh://product?id=" withString:@""];
-        CommodityDetailController *myController = [[CommodityDetailController alloc] init];
+        HHShoppingDetialController *myController = [[HHShoppingDetialController alloc] init];
         myController.productID = productID;
         [self.navigationController pushViewController:myController animated:YES];
     }else if ([urlStr hasPrefix:@"sjsh://category?id="]){//跳转到商品列表
@@ -761,8 +812,19 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    NSLog(@"搜索的内容为:%@!!!!!!!", textField.text);
     [currentTextField resignFirstResponder];
+    NSString *searchText = textField.text;
+    NSLog(@"搜索框输入的内容为%@！！！！！！！",searchText);
+    self.searchedContent = nil;         //开始输入后，清楚之前确认的内容
+    self.searchedContent = searchText; //正在输入的内容
+    
+    
+    HHShopListController *myController = [[HHShopListController alloc] init];
+    myController.theCategoryId = 0;
+    [[ConstObject instance] setCategoryId:0];
+    myController.searchedContent = searchText;
+    [self.navigationController pushViewController:myController animated:YES];
+    
     return YES;
 }
 

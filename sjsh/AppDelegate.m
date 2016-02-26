@@ -13,6 +13,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "OpenURLViewController.h"
 #import "OrderUnit.h"
+#import "HHHealthController.h"
 
 
 
@@ -245,7 +246,7 @@
     mineTab.tag = 3;
     [imgView addSubview:mineTab];
     [self.tabBarController.tabBar addSubview:imgView];
-    [imgView release];
+//    [imgView release];
  
     if ([versionType isEqualToString:@"1"]) {
          [homeTab setImage:[UIImage imageNamed:@"homeSelected.png"] forState:UIControlStateNormal];
@@ -267,15 +268,17 @@
     
 }
 
-//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
-//{
-//    if ([tabBarController.viewControllers indexOfObject:viewController]==2 && ![[ConstObject instance] isLogin]) {
-//        return NO;
-//    }
-//    else {
-//        return YES;
-//    }
-//}
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    if ([viewController isKindOfClass:[HHHealthController class]]) {
+         NSLog(@"健康页面!!!!!!!!!!!");
+    }
+    
+    NSLog(@"底部导航被点击%lu!!!!!!!!!!!",(unsigned long)tabBarController.selectedIndex );
+    
+        return YES;
+    
+}
 //- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 //{
 //
@@ -292,7 +295,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *versionType = [userDefaults objectForKey:@"version"];
     
-   
+    NSLog(@"底部导航点击，为第%ld个！！！！！！！",(long)btn.tag);
     
     switch (btn.tag) {
         case 0:
