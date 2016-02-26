@@ -279,55 +279,55 @@
     [self.pageScrollView addSubview:self.deliverInfoView];
     
     
-    self.dengesIco = [[UIImageView alloc] initWithFrame:CGRectMake(20, 15, 12, 15)];
+    self.dengesIco = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 12, 65)];
     self.dengesIco.image = [UIImage imageNamed:@"denges_flag"];
     self.dengesIco.contentMode = UIViewContentModeScaleAspectFit;
     [self.deliverInfoView addSubview:self.dengesIco];
     
-    self.dengesLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.dengesIco.frame.origin.x+self.dengesIco.frame.size.width+10, 15, 70, 15)];
+    self.dengesLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.dengesIco.frame.origin.x+self.dengesIco.frame.size.width+10, 0, 70, 65)];
     self.dengesLabel.text = @"当日送";
     self.dengesLabel.font = [UIFont systemFontOfSize:14];
     self.dengesLabel.textColor = [UIColor whiteColor];
     [self.deliverInfoView addSubview:self.dengesLabel];
     
     
-    self.freeShippingIco = [[UIImageView alloc] initWithFrame:CGRectMake(140, 15, 12, 15)];
+    self.freeShippingIco = [[UIImageView alloc] initWithFrame:CGRectMake(120, 0, 12, 65)];
     self.freeShippingIco.image = [UIImage imageNamed:@"denges_flag"];
     self.freeShippingIco.contentMode = UIViewContentModeScaleAspectFit;
     [self.deliverInfoView addSubview:self.freeShippingIco];
     
-    self.freeShippingLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.freeShippingIco.frame.origin.x+self.freeShippingIco.frame.size.width+10, 15, 70, 15)];
-    self.freeShippingLabel.text = @"免运费";
+    self.freeShippingLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.freeShippingIco.frame.origin.x+self.freeShippingIco.frame.size.width+10, 0, 140, 65)];
+    self.freeShippingLabel.text = @"7天无理由退换货";
     self.freeShippingLabel.textColor = [UIColor whiteColor];
     self.freeShippingLabel.font = [UIFont systemFontOfSize:14];
     [self.deliverInfoView addSubview:self.freeShippingLabel];
     
    
-    self.cashOnDeliveryIco = [[UIImageView alloc] initWithFrame:CGRectMake(340, 15, 12, 15)];
-    self.cashOnDeliveryIco.image = [UIImage imageNamed:@"denges_flag"];
-    self.cashOnDeliveryIco.contentMode = UIViewContentModeScaleAspectFit;
-    [self.deliverInfoView addSubview:self.cashOnDeliveryIco];
-    
-    self.cashOnDeliveryLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.cashOnDeliveryIco.frame.origin.x+self.cashOnDeliveryIco.frame.size.width+10, 15, 100, 15)];
-    self.cashOnDeliveryLabel.text = @"只支持货到付款";
-    self.cashOnDeliveryLabel.font = [UIFont systemFontOfSize:14];
-    self.cashOnDeliveryLabel.textAlignment = NSTextAlignmentLeft;
-    self.cashOnDeliveryLabel.textColor = [UIColor whiteColor];
-    [self.deliverInfoView addSubview:self.cashOnDeliveryLabel];
+//    self.cashOnDeliveryIco = [[UIImageView alloc] initWithFrame:CGRectMake(340, 15, 12, 15)];
+//    self.cashOnDeliveryIco.image = [UIImage imageNamed:@"denges_flag"];
+//    self.cashOnDeliveryIco.contentMode = UIViewContentModeScaleAspectFit;
+//    [self.deliverInfoView addSubview:self.cashOnDeliveryIco];
+//    
+//    self.cashOnDeliveryLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.cashOnDeliveryIco.frame.origin.x+self.cashOnDeliveryIco.frame.size.width+10, 15, 100, 15)];
+//    self.cashOnDeliveryLabel.text = @"只支持货到付款";
+//    self.cashOnDeliveryLabel.font = [UIFont systemFontOfSize:14];
+//    self.cashOnDeliveryLabel.textAlignment = NSTextAlignmentLeft;
+//    self.cashOnDeliveryLabel.textColor = [UIColor whiteColor];
+//    [self.deliverInfoView addSubview:self.cashOnDeliveryLabel];
     
    
     
-    self.aftermarketIco = [[UIImageView alloc] initWithFrame:CGRectMake(20, 37, 12, 15)];
-    self.aftermarketIco.image = [UIImage imageNamed:@"denges_flag"];
-    self.aftermarketIco.contentMode = UIViewContentModeScaleAspectFit;
-    [self.deliverInfoView addSubview:self.aftermarketIco];
-    
-    self.aftermarketLabel =  [[UILabel alloc] initWithFrame:CGRectMake(self.aftermarketIco.frame.origin.x+self.aftermarketIco.frame.size.width+10, 37, 200, 15)];
-    self.aftermarketLabel.text = @"7天无理由退换货";
-    self.aftermarketLabel.font = [UIFont systemFontOfSize:14];
-    self.aftermarketLabel.textAlignment = NSTextAlignmentLeft;
-    self.aftermarketLabel.textColor = [UIColor whiteColor];
-    [self.deliverInfoView addSubview:self.aftermarketLabel];
+//    self.aftermarketIco = [[UIImageView alloc] initWithFrame:CGRectMake(20, 37, 12, 15)];
+//    self.aftermarketIco.image = [UIImage imageNamed:@"denges_flag"];
+//    self.aftermarketIco.contentMode = UIViewContentModeScaleAspectFit;
+//    [self.deliverInfoView addSubview:self.aftermarketIco];
+//    
+//    self.aftermarketLabel =  [[UILabel alloc] initWithFrame:CGRectMake(self.aftermarketIco.frame.origin.x+self.aftermarketIco.frame.size.width+10, 37, 200, 15)];
+//    self.aftermarketLabel.text = @"7天无理由退换货";
+//    self.aftermarketLabel.font = [UIFont systemFontOfSize:14];
+//    self.aftermarketLabel.textAlignment = NSTextAlignmentLeft;
+//    self.aftermarketLabel.textColor = [UIColor whiteColor];
+//    [self.deliverInfoView addSubview:self.aftermarketLabel];
     
    
     
@@ -342,7 +342,7 @@
     [self.changeView.layer addSublayer:changeViewTopBorder];
     [self.pageScrollView addSubview:self.changeView];
     
-    self.detailButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 0, (ScreenWidth-20)*0.5, self.changeView.frame.size.height)];
+    self.detailButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 0, (ScreenWidth-20), self.changeView.frame.size.height)];
     [self.detailButton setTitle:@"商品详情" forState:UIControlStateNormal];
     [self.detailButton setTitleColor:kRedColor forState:UIControlStateNormal];
     self.detailButton.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -350,22 +350,22 @@
     [self.detailButton addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
     [self.changeView addSubview:self.detailButton];
     
-    self.detailFlagView = [[UIView alloc] initWithFrame:CGRectMake(10, self.changeView.frame.size.height-2.5, (ScreenWidth-20)*0.5, 2.5)];
-    self.detailFlagView.backgroundColor = kRedColor;
-    [self.changeView addSubview:self.detailFlagView];
-    
-    self.appraiseButton = [[UIButton alloc] initWithFrame:CGRectMake(10+(ScreenWidth-20)*0.5, 0, (ScreenWidth-20)*0.5, self.changeView.frame.size.height)];
-    [self.appraiseButton setTitle:@"评价" forState:UIControlStateNormal];
-    self.appraiseButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [self.appraiseButton setTitleColor:fontGrayColor forState:UIControlStateNormal];
-    self.appraiseButton.tag = 198802;
-    [self.appraiseButton addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
-    [self.changeView addSubview:self.appraiseButton];
-    
-    self.appraiseFlagView = [[UIView alloc] initWithFrame:CGRectMake(10+(ScreenWidth-20)*0.5, self.changeView.frame.size.height-2.5, (ScreenWidth-20)*0.5, 2.5)];
-    self.appraiseFlagView.backgroundColor = kRedColor;
-    self.appraiseFlagView.hidden = YES;
-    [self.changeView addSubview:self.appraiseFlagView];
+//    self.detailFlagView = [[UIView alloc] initWithFrame:CGRectMake(10, self.changeView.frame.size.height-2.5, (ScreenWidth-20)*0.5, 2.5)];
+//    self.detailFlagView.backgroundColor = kRedColor;
+//    [self.changeView addSubview:self.detailFlagView];
+//    
+//    self.appraiseButton = [[UIButton alloc] initWithFrame:CGRectMake(10+(ScreenWidth-20)*0.5, 0, (ScreenWidth-20)*0.5, self.changeView.frame.size.height)];
+//    [self.appraiseButton setTitle:@"评价" forState:UIControlStateNormal];
+//    self.appraiseButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//    [self.appraiseButton setTitleColor:fontGrayColor forState:UIControlStateNormal];
+//    self.appraiseButton.tag = 198802;
+//    [self.appraiseButton addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.changeView addSubview:self.appraiseButton];
+//    
+//    self.appraiseFlagView = [[UIView alloc] initWithFrame:CGRectMake(10+(ScreenWidth-20)*0.5, self.changeView.frame.size.height-2.5, (ScreenWidth-20)*0.5, 2.5)];
+//    self.appraiseFlagView.backgroundColor = kRedColor;
+//    self.appraiseFlagView.hidden = YES;
+//    [self.changeView addSubview:self.appraiseFlagView];
     
     //    self.detailDescribeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, self.changeView.frame.origin.y+self.changeView.frame.size.height, ScreenWidth-20, 100)];
     //    self.detailDescribeLabel.text = @"只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款只支持货到付款";

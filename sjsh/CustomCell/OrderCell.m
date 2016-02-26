@@ -119,7 +119,7 @@
     self.orderDictionary =  [myDictionary mutableCopy];
 
     
-    self.shopNameLabel.text= [myDictionary objectForKey:@"shop_name"];
+    self.shopNameLabel.text= [NSString stringWithFormat:@"订单号：%@",[myDictionary objectForKey:@"order_id"]];
     self.dataLabel.text= [myDictionary objectForKey:@"date_added"];
     self.commodityName.text=[myDictionary objectForKey:@"products"][0][@"name"];
      self.commodityNumberLabel.text= [NSString stringWithFormat:@"共%lu件商品",(unsigned long)[[myDictionary objectForKey:@"products"] count]];

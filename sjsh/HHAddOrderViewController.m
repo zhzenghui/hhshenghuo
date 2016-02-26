@@ -310,10 +310,10 @@
     self.userIco.image = [UIImage imageNamed:@"hh_icon_order_user"];
     [self.addressView addSubview:self.userIco];
     
-    self.userLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.userIco.frame.origin.x+self.userIco.frame.size.width+11, self.userIco.frame.origin.y, 50, 15)];
+    self.userLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.userIco.frame.origin.x+self.userIco.frame.size.width+11, self.userIco.frame.origin.y, 70, 15)];
     self.userLabel.text=@"未知";
     self.userLabel.textAlignment = NSTextAlignmentLeft;
-    self.userLabel.numberOfLines = 0;
+//    self.userLabel.numberOfLines = 0;
      self.userLabel.font = [UIFont systemFontOfSize:14];
     [self.addressView addSubview:self.userLabel];
     
@@ -411,7 +411,7 @@
     [self.submitAlertView addSubview:self.submitInfoView];
     
     self.submitButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 70)];
-    self.submitButtonView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:204.0/255.0 blue:51.0/255.0 alpha:1.0];
+    self.submitButtonView.backgroundColor = kRedColor;
     [self.submitAlertView addSubview:self.submitButtonView];
     
     float rowHeight = 20.0;
@@ -601,6 +601,13 @@
         self.isMember = ([info[@"is_member"] integerValue]==1);
         self.memberRemainder = info[@"member_price"];
         
+//        [self.addressView addSubview:self.userLabel];
+        
+    
+        
+        self.userLabel.text = info[@"firstname"];
+        self.phoneLabel.text = info[@"telephone"];
+        
         if(self.isMember){//如果是会员卡
             
             NSMutableDictionary *payWayDictionary = [[NSMutableDictionary alloc] init];
@@ -639,7 +646,7 @@
             NSLog(@"是否默认：%@!!!!!!!!!!!",addressArray[i][@"default_id"]);
             if ([addressArray[i][@"default_id"] integerValue]==1) {
                 self.isAddress = YES;
-                NSString *addressString = [NSString stringWithFormat:@"%@  %@\n%@\n%@",addressArray[i][@"firstname"],addressArray[i][@"mobile_num"],addressArray[i][@"xiaoqu"],addressArray[i][@"louhao"]];
+                NSString *addressString = [NSString stringWithFormat:@"%@ ",addressArray[i][@"address_1"]];
                 self.addressLabel.text=addressString;
                 self.addressId = [addressArray[i][@"address_id"] integerValue];
             }

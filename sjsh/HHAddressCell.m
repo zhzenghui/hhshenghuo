@@ -57,7 +57,7 @@
     self.phoneLabel.text = myDictionary[@"mobile_num"];
     
     if ([myDictionary[@"default_id"] integerValue]==1) {
-        NSMutableAttributedString *addressAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"[默认] %@  %@",myDictionary[@"xiaoqu"],myDictionary[@"louhao"]]];
+        NSMutableAttributedString *addressAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"[默认] %@",myDictionary[@"address_1"]]];
         [addressAttributedString addAttribute:NSForegroundColorAttributeName value:kRedColor range:NSMakeRange(0,4)];
         self.addressLabel.attributedText = addressAttributedString;
          self.backgroundColor = dilutedGrayColor;

@@ -629,7 +629,7 @@
     UIImageView *imageView = (UIImageView *)tapGesture.view;
     NSInteger index = imageView.tag;
     //    [self enterURLPage:self.topBannerArray[index][@"url"]];
-    [self enterURLPage:self.topBannerArray[index][@"url"]];
+    [self goPageByURL   :self.topBannerArray[index][@"url"]];
 }
 
 
@@ -649,7 +649,7 @@
     }else if ([urlStr hasPrefix:@"sjsh://product?id="]){//跳转到商品详情
         NSLog(@"跳转到商品详情!!!!!!");
         NSString *productID = [urlStr stringByReplacingOccurrencesOfString:@"sjsh://product?id=" withString:@""];
-        CommodityDetailController *myController = [[CommodityDetailController alloc] init];
+        HHShoppingDetialController *myController = [[HHShoppingDetialController alloc] init];
         myController.productID = productID;
         [self.navigationController pushViewController:myController animated:YES];
     }else if ([urlStr hasPrefix:@"sjsh://category?id="]){//跳转到商品列表

@@ -28,7 +28,7 @@
         self.cartImageView.layer.borderColor = [[UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1] CGColor];
         [self.contentView addSubview:self.cartImageView];
         
-        self.cartName = [[UILabel alloc] initWithFrame:CGRectMake(80, self.cartImageView.frame.origin.y, ScreenWidth-80-15, 40)];
+        self.cartName = [[UILabel alloc] initWithFrame:CGRectMake(80, self.cartImageView.frame.origin.y, ScreenWidth-80-30, 40)];
         self.cartName.font = [UIFont systemFontOfSize:14];
         self.cartName.textColor = fontGrayColor;
         self.cartName.lineBreakMode = NSLineBreakByWordWrapping;

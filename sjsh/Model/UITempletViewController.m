@@ -396,9 +396,9 @@
 
 -(void)showGif{
 
-    self.backageTopView.hidden = NO;
-    self.backageView.hidden = NO;
-    [self.view bringSubviewToFront:self.backageView];
+//    self.backageTopView.hidden = NO;
+//    self.backageView.hidden = NO;
+//    [self.view bringSubviewToFront:self.backageView];
     
 [self.loadIndicator startAnimating]; // 开始旋转
 //    self.view.userInteractionEnabled = NO;
@@ -407,9 +407,9 @@
 -(void)hideGif{
     [self.loadIndicator stopAnimating]; // 结束旋转
     [self.loadIndicator setHidesWhenStopped:YES]; //当旋转结束时隐藏
-    self.backageTopView.hidden = YES;
-    self.backageView.hidden = YES;
-    [self.view sendSubviewToBack:self.backageView];
+//    self.backageTopView.hidden = YES;
+//    self.backageView.hidden = YES;
+//    [self.view sendSubviewToBack:self.backageView];
     
 //    self.view.userInteractionEnabled = YES;
 }

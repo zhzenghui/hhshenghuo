@@ -181,6 +181,13 @@
             self.blankView.hidden = NO;
         }
         [self.cartTableView reloadData];
+        self.allSelectButton.tag=198832;
+        for (int row=0; row<self.cartArray.count; row++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+            [self.cartTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+            [self updateAllSelectButtonStyle];
+        }
+        [self updateShowPrice];
         
     }
     //    [self updateTotoaPrice];
@@ -235,6 +242,8 @@
 {
     NSArray *selectRows = [self.cartTableView indexPathsForSelectedRows];
     NSLog(@"所选的商品为%@!!!!!",selectRows);
+    
+    if(selectRows.count){
     
     if (myButton.tag==198821) {//购买
         
@@ -327,6 +336,16 @@
         //    NSLog(@"接口参数为%@！！！！！",info);
         
         
+    }
+    }else{
+        NSLog(@"请选择商品！");
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"请选择商品！";
+        hud.margin = 10.f;
+        hud.yOffset = 150.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:1];
     }
 }
 
