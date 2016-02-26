@@ -7,7 +7,7 @@
 //
 
 #import "ShoppingCartController.h"
-#import "AddOrderViewController.h"
+#import "HHAddOrderViewController.h"
 #import "LoginViewController.h"
 
 @interface ShoppingCartController ()
@@ -122,7 +122,7 @@
     
     self.sumPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.allSelectLabel.frame.origin.x+self.allSelectLabel.frame.size.width , 10, 200, 50)];
     self.sumPriceLabel.text = @"共计 ￥0.00";
-    self.sumPriceLabel.textColor = kRedColor;
+    self.sumPriceLabel.textColor = hhRedColor;
     self.sumPriceLabel.font = [UIFont boldSystemFontOfSize:14];
     [self.bottomView addSubview:self.sumPriceLabel];
     
@@ -340,7 +340,7 @@
     NSString *code = [completeDic objectForKey:@"code"];
     
     if([[completeDic objectForKey:@"code"] integerValue] ==  200){//进入下单页
-        AddOrderViewController *myViewController = [[AddOrderViewController alloc] init];
+        HHAddOrderViewController *myViewController = [[HHAddOrderViewController alloc] init];
         myViewController.isFirst = YES;
         myViewController.isAll = NO;
         [self.navigationController pushViewController:myViewController animated:YES];
