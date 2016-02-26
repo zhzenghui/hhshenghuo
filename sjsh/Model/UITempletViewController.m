@@ -348,14 +348,14 @@
 //    [alert release];
 }
 
-- (void)requestFailed:(ASIHTTPRequest *)request {
-    [self hideMBProgressHUD];
-    NSError *error = [request error];
-    if ([error code] == ASIRequestTimedOutErrorType) {
-        NSLog(@"time Out!!!");
-//        [[LoadingView sharedManager] showView:self.view message:@"请求超时,请重试..." originX:100.0f originY:150.0f delay:1.5f];
-    }
-}
+//- (void)requestFailed:(ASIHTTPRequest *)request {
+//    [self hideMBProgressHUD];
+//    NSError *error = [request error];
+//    if ([error code] == ASIRequestTimedOutErrorType) {
+//        NSLog(@"time Out!!!");
+////        [[LoadingView sharedManager] showView:self.view message:@"请求超时,请重试..." originX:100.0f originY:150.0f delay:1.5f];
+//    }
+//}
 
 #pragma mark-  文件操作函数
 
@@ -385,6 +385,13 @@
     for (NSHTTPCookie *cookie in cookies) {
         [cookieStorage deleteCookie:cookie];
     }
+}
+
+
+//接口调用错误
+- (void)requestFailed:(ASIHTTPRequest *)request
+{ [self hideGif];
+    NSLog(@"接口调用错误：%@！！！！！！",request.error);
 }
 
 -(void)showGif{

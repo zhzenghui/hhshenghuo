@@ -86,4 +86,6 @@
 -(void)showGif;
 -(void)hideGif;
 - (void)call400;
+
+- (void)requestFailed:(ASIHTTPRequest *)request;//接口调用失败
 @end

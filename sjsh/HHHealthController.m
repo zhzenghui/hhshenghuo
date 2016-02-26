@@ -172,7 +172,7 @@
     [self.view addSubview:self.homeScroll];
     
     //顶部滚动
-    self.preferentialScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0,ScreenWidth, ScreenWidth*297/640)];
+    self.preferentialScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0,ScreenWidth, ScreenWidth*240/640)];
     self.preferentialScroll.tag = 198813;
     self.preferentialScroll.delegate=self;
     self.preferentialScroll.pagingEnabled=YES;        //整页滚动

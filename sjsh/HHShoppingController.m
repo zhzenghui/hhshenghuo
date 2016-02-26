@@ -526,7 +526,9 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 { [super hideGif];
-    NSLog(@"接口调用错误！！！！！！");
+    NSLog(@"接口调用错误：%@！！！！！！",request.error);
+    
+    
 }
 
 

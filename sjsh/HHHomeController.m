@@ -181,7 +181,7 @@
         tableSubView.backgroundColor = dilutedGrayColor;
         
         //banner*******************************
-        self.bannerScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenWidth*390/640)];
+        self.bannerScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenWidth*240/640)];
         self.bannerScroll.tag = 198811;
         self.bannerScroll.delegate=self;
         self.bannerScroll.pagingEnabled=YES;        //整页滚动
@@ -483,6 +483,14 @@
     [commonModel getTopBanner:nil httpRequestSucceed:@selector(requestTopBannerSuccess:) httpRequestFailed:@selector(requestFailed:)];
     
 }
+
+- (void)requestFailed:(ASIHTTPRequest *)request{
+    [super hideGif];
+     NSLog(@"接口调用错误%@！！！！！！",request.error);
+    [super showGif];
+    [commonModel getTopBanner:nil httpRequestSucceed:@selector(requestTopBannerSuccess:) httpRequestFailed:@selector(requestFailed:)];
+}
+
 
 //获取首页顶部banner接口数据成功
 -(void)requestTopBannerSuccess:(ASIHTTPRequest *)request{

@@ -162,12 +162,13 @@
     if([completeDic[@"code"] integerValue]==1100){//跳转到登陆页
         
         //推出本页
-        NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
-        [navigationArray removeObjectAtIndex: navigationArray.count-1];  // You can pass your index here
-        self.navigationController.viewControllers = navigationArray;
+//        NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+//        [navigationArray removeObjectAtIndex: navigationArray.count-1];  // You can pass your index here
+//        self.navigationController.viewControllers = navigationArray;
         
         //跳转到登陆页
         LoginViewController *myController = [[LoginViewController alloc]init];
+//        myController.noShowReturn = NO;
         [self.navigationController pushViewController:myController animated:YES];
         
     }else{

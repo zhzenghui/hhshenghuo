@@ -360,7 +360,7 @@
     [infoDictionary setValue:[NSString stringWithFormat:@"%d",page] forKey:@"page"];
     if(self.searchedContent&&![self.searchedContent isEqualToString:@""]){//存在检索内容
         [infoDictionary setValue: self.searchedContent forKey:@" keywords"];//搜索字段
-        [infoDictionary setValue:@"0" forKey:@"category_id"];
+        [infoDictionary setValue:@"all" forKey:@"category_id"];
         //修改列表状态
         myItemIndex = 0;
     }
@@ -385,6 +385,11 @@
     NSLog(@"获取商品类别：%@",dic);
     
     self.categoryListArray = [NSMutableArray arrayWithArray:[dic objectForKey:@"result"][@"data"]];
+    
+    NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc]init];
+    myDictionary[@"category_id"] = @"0";
+     myDictionary[@"name"] = @"全部";
+    [self.categoryListArray insertObject:myDictionary atIndex:0];
     //    self.allCount = [NSString stringWithFormat:@"%@",[[dic objectForKey:@"result"] objectForKey:@"count"]];
     [self addCategoryItem];
     
@@ -539,6 +544,8 @@
                 cell.myDictionary = dataDic;
 //                NSString *product_name = [[NSString stringWithFormat:@"%@\n ",[dataDic objectForKey:@"name"]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                  NSString *product_name = [NSString stringWithFormat:@"%@\n ",[dataDic objectForKey:@"name"]];
+                product_name = [product_name substringToIndex:10];
+                
                 //            NSString *meta_description = [NSString stringWithFormat:@"%@",[dataDic objectForKey:@"meta_description"]];
                 NSString *imageUrl = [NSString stringWithFormat:@"%@",[dataDic objectForKey:@"image"]];
                 NSString *price = [NSString stringWithFormat:@"¥ %@",[dataDic objectForKey:@"price"]];
