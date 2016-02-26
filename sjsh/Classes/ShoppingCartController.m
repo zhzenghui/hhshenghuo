@@ -8,7 +8,6 @@
 
 #import "ShoppingCartController.h"
 #import "AddOrderViewController.h"
-#import "HHAddOrderViewController.h"
 #import "LoginViewController.h"
 
 @interface ShoppingCartController ()
@@ -123,7 +122,7 @@
     
     self.sumPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.allSelectLabel.frame.origin.x+self.allSelectLabel.frame.size.width , 10, 200, 50)];
     self.sumPriceLabel.text = @"共计 ￥0.00";
-    self.sumPriceLabel.textColor = hhRedColor;
+    self.sumPriceLabel.textColor = kRedColor;
     self.sumPriceLabel.font = [UIFont boldSystemFontOfSize:14];
     [self.bottomView addSubview:self.sumPriceLabel];
     
@@ -235,7 +234,6 @@
 {
     NSArray *selectRows = [self.cartTableView indexPathsForSelectedRows];
     NSLog(@"所选的商品为%@!!!!!",selectRows);
-    if(selectRows.count>0){
     
     if (myButton.tag==198821) {//购买
         
@@ -329,10 +327,6 @@
         
         
     }
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请选择商品" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [alert show];
-    }
 }
 
 //批量添加订单商品成功
@@ -346,24 +340,10 @@
     NSString *code = [completeDic objectForKey:@"code"];
     
     if([[completeDic objectForKey:@"code"] integerValue] ==  200){//进入下单页
-        
-        
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString *versionType = [userDefaults objectForKey:@"version"];
-        
-        if ([versionType isEqualToString:@"1"]) {
-        
         AddOrderViewController *myViewController = [[AddOrderViewController alloc] init];
         myViewController.isFirst = YES;
         myViewController.isAll = NO;
         [self.navigationController pushViewController:myViewController animated:YES];
-            
-        }else{
-            HHAddOrderViewController *myViewController = [[HHAddOrderViewController alloc] init];
-            myViewController.isFirst = YES;
-            myViewController.isAll = NO;
-            [self.navigationController pushViewController:myViewController animated:YES];
-        }
     }
 }
 
@@ -492,6 +472,7 @@
     cell.selectedBackgroundView = backView;
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     cell.delegate = self;
+    cell.position = indexPath.row;
     [cell setCellInfo:self.cartArray[indexPath.row]];
     
     return cell;
@@ -590,9 +571,11 @@
 - (void)requestupdatecartSuccess:(ASIHTTPRequest *)request{
     [super hideGif];
     NSDictionary *completeDic = [super parseJsonRequest:request];
-    NSLog(@"修改购物车成功：%@",completeDic);
+    NSLog(@"修改购物车成功：%@;位置：%ld，数量%ld",completeDic,(long)self.position,(long)
+          self.positionNumber);
     NSString *code = [completeDic objectForKey:@"code"];
     NSString *msg = nil;
+    
     NSMutableDictionary *myDictionary = [self.cartArray[self.position] mutableCopy];
     NSNumber *myNumber = [NSNumber numberWithInteger:self.positionNumber];
     switch ([code integerValue]) {
@@ -600,6 +583,8 @@
             //添加成功
             myDictionary[@"quantity"] = myNumber;
             self.cartArray[self.position] = myDictionary;
+            NSLog(@"修改购物车成功：%@！！！！！",self.cartArray);
+            
             [self updateShowPrice];
             break;
         case 6002:
