@@ -359,6 +359,7 @@
             [self.cartTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
             [self updateAllSelectButtonStyle];
         }
+         [self updateShowPrice];
     }else{//变为全不选
         myButton.tag=198831;
         for (int row=0; row<self.cartArray.count; row++) {
@@ -367,7 +368,7 @@
             [self updateAllSelectButtonStyle];
             
         }
-        
+         [self updateShowPrice];
     }
     
 }

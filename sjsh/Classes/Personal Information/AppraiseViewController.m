@@ -309,11 +309,13 @@
     NSLog(@"更新评分的代理方法%@!!!!！",myDictionary);
     
     self.appraiseArray[[myDictionary[@"position"] integerValue]][@"appraiseValue"] = myDictionary[@"appraiseValue"];
+    [self.appraiseTableView reloadData];
 }
 
 //更新评论内容
 - (void)updateComment:(NSMutableDictionary *)myDictionary{
     self.appraiseArray[[myDictionary[@"position"] integerValue]][@"appraiseComment"] = myDictionary[@"appraiseComment"];
+    [self.appraiseTableView reloadData];
 }
 
 

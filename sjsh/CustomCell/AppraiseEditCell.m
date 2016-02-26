@@ -210,6 +210,10 @@
     self.appraiseDictionary = [myDictionary mutableCopy];
 //    self.appraiseDictionary[@"appraiseComment"] = @"";
     
+    self.commodityGradeView.rate = [self.appraiseDictionary[@"appraiseValue"] integerValue];
+    self.appraiseContentText.text = self.appraiseDictionary[@"appraiseComment"];
+    
+    
     [self.commodityImageView setImageWithURL:[NSURL URLWithString:myDictionary[@"image"]]];
     
     for (int i=0; i<self.photographImageViewArray.count; i++) {
