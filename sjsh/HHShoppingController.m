@@ -108,7 +108,7 @@
     [myDictionary setValue:@"test_hh_shopping01" forKey:@"ico"];
     [myDictionary setValue:@"食品" forKey:@"title2"];
     [myDictionary setValue:[UIColor colorWithRed:246.0/255.0 green:192.0/255.0 blue:75.0/255.0 alpha:1.0] forKey:@"color"];
-     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
+     [myDictionary setValue:@"sjsh://category?id=581" forKey:@"href"];
     
     [self.categoryCollectionArray addObject:myDictionary];
     

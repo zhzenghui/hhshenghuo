@@ -15,7 +15,7 @@
 #import "UPPayPlugin.h"
 #import "WXApi.h"
 #import "NSString+MD5Addition.h"
-#import "AddressViewController.h"
+#import "HHAdressViewController.h"
 
 
 #define BASE_URL @"https://api.weixin.qq.com"
@@ -1217,7 +1217,7 @@
     //    detailViewController.hide400 = YES;
     //    [detailViewController initWithUrl:@"http://www.sjsh8.cn/index.php?route=mobile/fuwu/appforaddress" andTitle:@"地址管理"];
     
-    AddressViewController *detailViewController = [[AddressViewController alloc] init];
+    HHAdressViewController *detailViewController = [[HHAdressViewController alloc] init];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

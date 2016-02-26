@@ -323,6 +323,8 @@
         httpRequestFailed:(SEL)httpRequestFailed
 {
     NSString *urlString = [NSString stringWithFormat:Kaddaddress];
+    
+    NSLog(@"新增地址接口：%@;参数为：%@",urlString,info);
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [super post:urlString params:info httpRequestSuccess:httpRequestSucceed httpRequestFailed:httpRequestFailed];
 }
@@ -333,6 +335,7 @@
            httpRequestFailed:(SEL)httpRequestFailed
 {
     NSString *urlString = [NSString stringWithFormat:Kupdateaddress];
+    NSLog(@"修改地址接口：%@;参数为：%@",urlString,info);
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [super post:urlString params:info httpRequestSuccess:httpRequestSucceed httpRequestFailed:httpRequestFailed];
 }
