@@ -14,13 +14,13 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 50)];
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 100, 50)];
         self.nameLabel.font = [UIFont systemFontOfSize:14];
         self.nameLabel.textColor = [UIColor colorWithRed:100 / 255.0 green:100 / 255.0 blue:100 / 255.0 alpha:1];
         self.nameLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.nameLabel];
         
-        self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, MRScreenWidth - 150, 50)];
+        self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 0, MRScreenWidth - 150, 50)];
         self.valueLabel.font = [UIFont systemFontOfSize:14];
         self.valueLabel.textColor = [UIColor colorWithRed:160 / 255.0 green:160 / 255.0 blue:160 / 255.0 alpha:1];
         self.valueLabel.textAlignment = NSTextAlignmentRight;

@@ -111,7 +111,7 @@
     }
     else if ([[dic objectForKey:@"code"] intValue] == 1100){
         //        [super showMessageBox:self title:@"未登陆" message:@"未登陆！" cancel:nil confirm:@"确定"];
-        [self pushToLoginVC:NO];
+        [self pushToLoginVC:NO animation:YES];
     }
 }
 
@@ -517,7 +517,7 @@
     }
     else if ([[dic objectForKey:@"code"] intValue] == 1100){
         //        [super showMessageBox:self title:@"未登陆" message:@"未登陆！" cancel:nil confirm:@"确定"];
-        [self pushToLoginVC:NO];
+        [self pushToLoginVC:NO animation:YES];
     }
 }
 
@@ -538,7 +538,7 @@
     }
     else if ([[dic objectForKey:@"code"] intValue] == 1100){
         //        [super showMessageBox:self title:@"未登陆" message:@"未登陆！" cancel:nil confirm:@"确定"];
-        [self pushToLoginVC:NO];
+        [self pushToLoginVC:NO animation:YES];
     }
 }
 

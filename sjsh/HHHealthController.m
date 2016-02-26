@@ -52,8 +52,8 @@
     [leftButton setTitle:@"徐州总工会" forState:UIControlStateNormal];
     [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
-
-     self.view.backgroundColor = dilutedGrayColor;
+    
+    self.view.backgroundColor = dilutedGrayColor;
     self.bannerList = [NSArray array];
     self.serviceList = [NSMutableArray array];
     
@@ -68,7 +68,7 @@
     [labelArray addObject:@"门诊挂号"];
     [labelArray addObject:@"专家信息"];
     [labelArray addObject:@"医院信息"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -77,7 +77,7 @@
     [myDictionary setValue:@"在线咨询" forKey:@"title"];
     [labelArray addObject:@"专家咨询"];
     [labelArray addObject:@"普通咨询"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -87,7 +87,7 @@
     [labelArray addObject:@"体验预约"];
     [labelArray addObject:@"体验报告"];
     [labelArray addObject:@"体验建议"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -97,8 +97,8 @@
     [labelArray addObject:@"家庭常备"];
     [labelArray addObject:@"保健品"];
     [labelArray addObject:@"医疗器械"];
-     [labelArray addObject:@"当季推荐"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [labelArray addObject:@"当季推荐"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -109,7 +109,7 @@
     [labelArray addObject:@"疾病常识"];
     [labelArray addObject:@"生活百科"];
     [labelArray addObject:@"日常保健"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -119,7 +119,7 @@
     [labelArray addObject:@"疗养预约"];
     [labelArray addObject:@"普通疗养"];
     [labelArray addObject:@"心理疗养"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -129,7 +129,7 @@
     [labelArray addObject:@"附近医院"];
     [labelArray addObject:@"附近药店"];
     [labelArray addObject:@"附近健身场所"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -139,7 +139,7 @@
     [labelArray addObject:@"病友咨询"];
     [labelArray addObject:@"组织活动"];
     [labelArray addObject:@"病友论坛"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -150,7 +150,7 @@
     [labelArray addObject:@"儿童常见病"];
     [labelArray addObject:@"骨科"];
     [labelArray addObject:@"口腔疾病"];
-     [myDictionary setValue:labelArray forKey:@"labelArray"];
+    [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
@@ -162,14 +162,16 @@
     [labelArray addObject:@"上门送药"];
     [myDictionary setValue:labelArray forKey:@"labelArray"];
     [self.serviceList addObject:myDictionary];
- 
-        self.homeScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-        self.homeScroll.contentSize=CGSizeMake(ScreenWidth, 1000);
-        self.homeScroll.showsHorizontalScrollIndicator=NO;
-        self.homeScroll.showsVerticalScrollIndicator=NO;
-        self.homeScroll.backgroundColor = [UIColor clearColor];
-        [self.view addSubview:self.homeScroll];
     
+    //整页滚动
+    self.homeScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    self.homeScroll.contentSize=CGSizeMake(ScreenWidth, 1100);
+    self.homeScroll.showsHorizontalScrollIndicator=NO;
+    self.homeScroll.showsVerticalScrollIndicator=NO;
+    self.homeScroll.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.homeScroll];
+    
+    //顶部滚动
     self.preferentialScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0,ScreenWidth, ScreenWidth*297/640)];
     self.preferentialScroll.tag = 198813;
     self.preferentialScroll.delegate=self;
@@ -184,9 +186,9 @@
     
     self.preferentialPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.preferentialScroll.frame.origin.y+self.preferentialScroll.frame.size.height-20, ScreenWidth, 20)];
     self.preferentialPageControl.tag=198814;
-//    [self.preferentialPageControl setPageIndicatorTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"hh_dot_white_ico.jpg"]]];
+    //    [self.preferentialPageControl setPageIndicatorTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"hh_dot_white_ico.jpg"]]];
     [self.preferentialPageControl setValue:[UIImage imageNamed:@"hh_dot_biue_ico"] forKey:@"_currentPageImage"];
-        [self.preferentialPageControl setValue:[UIImage imageNamed:@"hh_dot_white_ico"]  forKey:@"_pageImage"];
+    [self.preferentialPageControl setValue:[UIImage imageNamed:@"hh_dot_white_ico"]  forKey:@"_pageImage"];
     [self.homeScroll addSubview:self.preferentialPageControl];
     
     
@@ -195,12 +197,12 @@
     
     
     //commodityCollection layout
-//    UICollectionViewFlowLayout *fl02 = [[UICollectionViewFlowLayout alloc]init];
-//    fl02.minimumInteritemSpacing = 4;//每列最小边距
-//    fl02.minimumLineSpacing = 6;//每行最小边距
-
+    //    UICollectionViewFlowLayout *fl02 = [[UICollectionViewFlowLayout alloc]init];
+    //    fl02.minimumInteritemSpacing = 4;//每列最小边距
+    //    fl02.minimumLineSpacing = 6;//每行最小边距
     
-//    CGRect rect = CGRectMake(10, self.preferentialScroll.frame.origin.y+self.preferentialScroll.frame.size.height+10, ScreenWidth-20, self.view.bounds.size.height-self.preferentialScroll.frame.size.height-70);
+    
+    //    CGRect rect = CGRectMake(10, self.preferentialScroll.frame.origin.y+self.preferentialScroll.frame.size.height+10, ScreenWidth-20, self.view.bounds.size.height-self.preferentialScroll.frame.size.height-70);
     CGRect rect = CGRectMake(10, self.preferentialScroll.frame.origin.y+self.preferentialScroll.frame.size.height+10, ScreenWidth-20, 1000-self.preferentialScroll.frame.size.height);
     rect.size.height -= 64;
     UICollectionViewFlowLayout *flowLayout= [[UICollectionViewFlowLayout alloc]init];
@@ -218,10 +220,10 @@
     self.myCollectionView.dataSource = self;
     
     [self.homeScroll addSubview:self.myCollectionView];
- 
     
     
-   
+    
+    
     //    [self jumpToWebViewWithUrlStr:@"http://www.baidu.com" title:@"百度"];
     
     
@@ -266,7 +268,7 @@
 }
 
 
-    
+
 
 
 
@@ -279,8 +281,8 @@
         case 200:
         {
             success2 = YES;
-//            self.serviceList = [completeDic objectForKey:@"result"];
-//            [self.myCollectionView reloadData];
+            //            self.serviceList = [completeDic objectForKey:@"result"];
+            //            [self.myCollectionView reloadData];
             
         }
             break;
@@ -290,8 +292,8 @@
             break;
     }
     
-     [commonModel getTopBanner:nil httpRequestSucceed:@selector(getMiddleBannerSuccess:) httpRequestFailed:@selector(requestFailed:)];
- 
+    [commonModel getTopBanner:nil httpRequestSucceed:@selector(getMiddleBannerSuccess:) httpRequestFailed:@selector(requestFailed:)];
+    
 }
 
 
@@ -383,16 +385,16 @@
     
     if (scrollView.tag==198813) {
         
-    
-    // 记录scrollView 的当前位置，因为已经设置了分页效果，所以：位置/屏幕大小 = 第几页
-    int current = scrollView.contentOffset.x/scrollView.bounds.size.width;
-    
-    NSLog(@"scrollView  当前页数为 %d",current);
-  
+        
+        // 记录scrollView 的当前位置，因为已经设置了分页效果，所以：位置/屏幕大小 = 第几页
+        int current = scrollView.contentOffset.x/scrollView.bounds.size.width;
+        
+        NSLog(@"scrollView  当前页数为 %d",current);
+        
         UIPageControl *page = (UIPageControl *)[self.view viewWithTag:198814];
         page.currentPage = current;
         
- }
+    }
     
 }
 
@@ -469,7 +471,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dic = [self.serviceList objectAtIndex:indexPath.row];
-//    NSString *urlStr = [dic objectForKey:@"url"];
+    //    NSString *urlStr = [dic objectForKey:@"url"];
     [self jumpToWebViewWithUrlStr:nil];
 }
 
@@ -497,8 +499,8 @@
 {
     //跳web页面
     MyWebViewController *myWebViewController = [[MyWebViewController alloc] init];
-    myWebViewController.myUrl =  @"https://www.hao123.com";
-   
+    myWebViewController.myUrl =  (urlStr==nil)?@"https://www.hao123.com":urlStr;
+    
     [self.navigationController pushViewController:myWebViewController animated:YES];
     //    [detailViewController release];
 }

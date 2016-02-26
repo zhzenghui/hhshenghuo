@@ -116,17 +116,20 @@
     [myDictionary setValue:@"test_hh_shopping02" forKey:@"ico"];
     [myDictionary setValue:@"日用" forKey:@"title2"];
     [myDictionary setValue:[UIColor colorWithRed:84.0/255.0 green:176.0/255.0 blue:224.0/255.0 alpha:1.0] forKey:@"color"];
+     [myDictionary setValue:@"sjsh://category?id=580" forKey:@"href"];
     [self.categoryCollectionArray addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
     [myDictionary setValue:@"test_hh_shopping03" forKey:@"ico"];
     [myDictionary setValue:@"生鲜" forKey:@"title2"];
+     [myDictionary setValue:@"sjsh://category?id=582" forKey:@"href"];
     [myDictionary setValue:[UIColor colorWithRed:192.0/255.0 green:211.0/255.0 blue:60.0/255.0 alpha:1.0] forKey:@"color"];
     [self.categoryCollectionArray addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
     [myDictionary setValue:@"test_hh_shopping04" forKey:@"ico"];
     [myDictionary setValue:@"保健品" forKey:@"title2"];
+     [myDictionary setValue:@"sjsh://category?id=583" forKey:@"href"];
     [myDictionary setValue:[UIColor colorWithRed:243.0/255.0 green:149.0/255.0 blue:186.0/255.0 alpha:1.0] forKey:@"color"];
     [self.categoryCollectionArray addObject:myDictionary];
     
@@ -134,30 +137,35 @@
     [myDictionary setValue:@"test_hh_shopping05" forKey:@"ico"];
     [myDictionary setValue:@"家庭常备" forKey:@"title2"];
     [myDictionary setValue:[UIColor colorWithRed:250.0/255.0 green:79.0/255.0 blue:45.0/255.0 alpha:1.0] forKey:@"color"];
+     [myDictionary setValue:@"sjsh://category?id=586" forKey:@"href"];
     [self.categoryCollectionArray addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
     [myDictionary setValue:@"test_hh_shopping06" forKey:@"ico"];
     [myDictionary setValue:@"医疗器械" forKey:@"title2"];
     [myDictionary setValue:[UIColor colorWithRed:51.0/255.0 green:102.0/255.0 blue:153.0/255.0 alpha:1.0] forKey:@"color"];
+     [myDictionary setValue:@"sjsh://category?id=585" forKey:@"href"];
     [self.categoryCollectionArray addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
     [myDictionary setValue:@"test_hh_shopping07" forKey:@"ico"];
     [myDictionary setValue:@"养生会所" forKey:@"title2"];
     [myDictionary setValue:[UIColor colorWithRed:192.0/255.0 green:211.0/255.0 blue:60.0/255.0 alpha:1.0] forKey:@"color"];
+     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
     [self.categoryCollectionArray addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
     [myDictionary setValue:@"test_hh_shopping08" forKey:@"ico"];
     [myDictionary setValue:@"健身场所" forKey:@"title2"];
     [myDictionary setValue:[UIColor colorWithRed:246.0/255.0 green:192.0/255.0 blue:75.0/255.0 alpha:1.0] forKey:@"color"];
+     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
     [self.categoryCollectionArray addObject:myDictionary];
     
     myDictionary = [[NSMutableDictionary alloc] init];
     [myDictionary setValue:@"test_hh_shopping09" forKey:@"ico"];
     [myDictionary setValue:@"生活百科" forKey:@"title2"];
     [myDictionary setValue:[UIColor colorWithRed:84.0/255.0 green:176.0/255.0 blue:224.0/255.0 alpha:1.0] forKey:@"color"];
+     [myDictionary setValue:@"sjsh://category?id=0" forKey:@"href"];
     [self.categoryCollectionArray addObject:myDictionary];
     
     
@@ -551,6 +559,7 @@
         NSString *categoryID = [urlStr stringByReplacingOccurrencesOfString:@"sjsh://category?id=" withString:@""];
                 HHShopListController *myController = [[HHShopListController alloc] init];
                 myController.theCategoryId = categoryID;
+            [[ConstObject instance] setCategoryId:categoryID];
                 [self.navigationController pushViewController:myController animated:YES];
 //                UIButton *shangpinTab = [UIButton buttonWithType:UIButtonTypeCustom];
 //                shangpinTab.tag = [categoryID integerValue];

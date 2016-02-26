@@ -3917,8 +3917,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ye jiao (N9D7C75SSJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ye jiao (N9D7C75SSJ)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3948,9 +3948,9 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.sjsh8.h;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sjsh8.hh;
 				PRODUCT_NAME = sjsh;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8998fcca-b803-42e0-960d-3d18eadaf87c";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = NO;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -3966,8 +3966,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ye jiao (N9D7C75SSJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ye jiao (N9D7C75SSJ)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3997,9 +3997,9 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.sjsh8.h;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sjsh8.hh;
 				PRODUCT_NAME = sjsh;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8998fcca-b803-42e0-960d-3d18eadaf87c";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";

@@ -308,7 +308,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.type == Type_Nickname) {
-        return 50;
+        return 52.5;
     }
     else if (self.type == Type_Address)
     {
@@ -317,21 +317,21 @@
         if (indexPath.row < [[dic objectForKey:kCellIdentifier] count] - 1) {
             return 80;
         }
-        return 50;
+        return 52.5;
     }
     else if (self.type == Type_Sex)
     {
-        return 50;
+        return 52.5;
     }
     else if (self.type == Type_TrueName)
     {
-        return 50;
+        return 52.5;
     }
     else if (self.type == Type_Marriage)
     {
-        return 50;
+        return 52.5;
     }
-    return 50;
+    return 52.5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

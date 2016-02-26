@@ -15,14 +15,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 50)];
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 52.5)];
         self.nameLabel.font = [UIFont systemFontOfSize:14];
         self.nameLabel.textColor = [UIColor colorWithRed:100 / 255.0 green:100 / 255.0 blue:100 / 255.0 alpha:1];
         self.nameLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.nameLabel];
         
         self.checkBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.checkBtn.frame = CGRectMake(MRScreenWidth - 46, 2, 46, 46);
+        self.checkBtn.frame = CGRectMake(MRScreenWidth - 46, (52.5-46)/2, 46, 46);
         [self.checkBtn setImage:[UIImage imageNamed:@"hh_user_address_select"] forState:UIControlStateSelected];
 
         [self.contentView addSubview:self.checkBtn];

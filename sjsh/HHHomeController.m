@@ -20,6 +20,7 @@
 #import "HHHomeCell.h"
 #import "ShoppingCartController.h"
 #import "HHShopListController.h"
+#import "MyWebViewController.h"
 
 @interface HHHomeController (){
     float screenDistance ;//屏幕左右两边的边距
@@ -593,10 +594,10 @@
             [self goPageByURL:@"sjsh://category?id=582"];
             break;
         case 198812:
-            [self goPageByURL:@"sjsh://category?id=580"];
+            [self goPageByURL:@"sjsh://category?id=587"];
             break;
         case 198813:
-            [self goPageByURL:@"sjsh://category?id=581"];
+            [self goPageByURL:@"sjsh://category?id=580"];
             break;
         default:
             break;
@@ -672,6 +673,16 @@
     [detailViewController initWithUrl:url andTitle:@""];
     [self.navigationController pushViewController:detailViewController animated:YES];
     
+}
+
+- (void)jumpToWebViewWithUrlStr:(NSString *)urlStr
+{
+    //跳web页面
+    MyWebViewController *myWebViewController = [[MyWebViewController alloc] init];
+    myWebViewController.myUrl =  (urlStr==nil)?@"https://www.hao123.com":urlStr;
+    
+    [self.navigationController pushViewController:myWebViewController animated:YES];
+    //    [detailViewController release];
 }
 
 #pragma mark UIScrollViewDelegate
@@ -767,5 +778,15 @@
     return cell;
     
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+        NSDictionary *dataDic = (NSDictionary *)[self.homeTableArray objectAtIndex:indexPath.row];
+    [self jumpToWebViewWithUrlStr:nil];
+    
+}
+
 
 @end

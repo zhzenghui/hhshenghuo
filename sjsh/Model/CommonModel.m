@@ -111,6 +111,8 @@
           httpRequestSucceed:(SEL)httpRequestSucceed
            httpRequestFailed:(SEL)httpRequestFailed{
     NSString *urlString = [NSString stringWithFormat:kLogin];
+    
+    NSLog(@"登陆接口为：%@;参数为：%@",urlString,info);
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [super post:urlString params:info httpRequestSuccess:httpRequestSucceed httpRequestFailed:httpRequestFailed];
 }
@@ -136,6 +138,8 @@
     httpRequestFailed:(SEL)httpRequestFailed{
     
     NSString *urlString = [NSString stringWithFormat:kLogout];
+     NSLog(@"退出登录接口为：%@",urlString);
+    
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [super post:urlString params:nil httpRequestSuccess:httpRequestSucceed httpRequestFailed:httpRequestFailed];
 }
@@ -145,6 +149,8 @@
   httpRequestSucceed:(SEL)httpRequestSucceed
    httpRequestFailed:(SEL)httpRequestFailed{
     NSString *urlString = [NSString stringWithFormat:kRegister];
+    
+     NSLog(@"获取验证码接口为：%@，参数为%@",urlString,info);
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [super post:urlString params:info httpRequestSuccess:httpRequestSucceed httpRequestFailed:httpRequestFailed];
 }
@@ -215,6 +221,8 @@
          httpRequestFailed:(SEL)httpRequestFailed
 {
     NSString *urlString = [NSString stringWithFormat:kgetpassword];
+    NSLog(@"获取验证码接口为：%@，参数为%@",urlString,info);
+    
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [super post:urlString params:info httpRequestSuccess:httpRequestSucceed httpRequestFailed:httpRequestFailed];
 }

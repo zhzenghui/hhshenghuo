@@ -520,7 +520,7 @@
     }
     
     //    self.detailDescribeLabel.text = [dic objectForKey:@"description"];
-    NSString *productURL = [NSString stringWithFormat:@"http://www.sjsh8.cn/index.php?route=mobile/product/productdetail&product_id=%@",[dic objectForKey:@"product_id"]];
+    NSString *productURL = [NSString stringWithFormat:@"%@index.php?route=mobile/product/productdetail&product_id=%@",prefix_url,[dic objectForKey:@"product_id"]];
     NSURL *urlS = [[NSURL alloc] initWithString:productURL];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:urlS];
     [req setTimeoutInterval:300];
@@ -856,7 +856,7 @@
             self.detailDescribeWeb.hidden = YES;
             self.appraiseTableView.hidden = NO;
             
-            self.pageScrollView.contentSize=CGSizeMake(self.pageScrollView.bounds.size.width, 500+self.appraiseArray.count*182+self.specificationsTableView.frame.size.height);
+            self.pageScrollView.contentSize=CGSizeMake(self.pageScrollView.bounds.size.width, 600+self.appraiseArray.count*182+self.specificationsTableView.frame.size.height);
             break;
         default:
             break;
@@ -944,7 +944,7 @@
     }
     else if ([[dic objectForKey:@"code"] intValue] == 1100){
         //        [super showMessageBox:self title:@"未登陆" message:@"未登陆！" cancel:nil confirm:@"确定"];
-        [self pushToLoginVC:NO];
+        [self pushToLoginVC:NO animation:YES];
     }
 }
 
@@ -966,7 +966,7 @@
     }
     else if ([[dic objectForKey:@"code"] intValue] == 1100){
         //        [super showMessageBox:self title:@"未登陆" message:@"未登陆！" cancel:nil confirm:@"确定"];
-        [self pushToLoginVC:NO];
+        [self pushToLoginVC:NO animation:YES];
     }
 }
 
