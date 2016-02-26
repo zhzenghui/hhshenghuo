@@ -488,6 +488,12 @@
     //       [self.cartTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionBottom];
     
     [self updateShowPrice];//修改总价的显示数值
+    //修改全选标识
+    NSArray *selectRows = [self.cartTableView indexPathsForSelectedRows];
+    if(selectRows.count==self.cartArray.count){
+        self.allSelectButton.tag=198832;
+        [self updateAllSelectButtonStyle];
+    }
     
 }
 
@@ -499,7 +505,11 @@
     //       [self.cartTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionBottom];
     
     [self updateShowPrice];//修改总价的显示数值
-    
+    //修改全选标识
+    if(self.allSelectButton.tag==198832){
+        self.allSelectButton.tag=198831;
+        [self updateAllSelectButtonStyle];
+    }
 }
 
 
